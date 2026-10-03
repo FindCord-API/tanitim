@@ -1,90 +1,419 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmet Şartları - FindCord</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 40px;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        ul {
-            margin-left: 20px;
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #777;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kullanım Koşulları — FindCord</title>
+<meta name="description" content="FindCord Discord botu, web sitesi ve API kullanım koşulları. / FindCord terms of service (Turkish and English).">
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --ink:#1f2430; --muted:#5b6474; --line:#e4e7ec;
+    --brand:#2f6fed; --brand-soft:#eef3ff; --ok:#0f7b4f; --ok-soft:#e8f6ef;
+    --warn:#8a5300; --warn-soft:#fdf3e3; --no:#b42318; --no-soft:#fdeceb;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:32px 16px 72px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.65; font-size:16px;
+  }
+  .wrap{max-width:860px; margin:0 auto}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px 30px; margin-bottom:20px}
+  header.card{border-top:4px solid var(--brand)}
+  h1{margin:0 0 6px; font-size:28px; letter-spacing:-.3px}
+  h2{margin:34px 0 10px; font-size:20px; letter-spacing:-.2px; padding-bottom:6px; border-bottom:1px solid var(--line)}
+  h3{margin:22px 0 8px; font-size:16px}
+  p{margin:10px 0}
+  ul{margin:10px 0 10px 20px; padding:0}
+  li{margin:6px 0}
+  .meta{color:var(--muted); font-size:14px; margin:0}
+  .pill{display:inline-block; padding:3px 10px; border-radius:999px; font-size:12.5px; font-weight:600; white-space:nowrap}
+  .pill-brand{background:var(--brand-soft); color:var(--brand)}
+  .pill-ok{background:var(--ok-soft); color:var(--ok)}
+  .pill-no{background:var(--no-soft); color:var(--no)}
+  .langbar{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+  .langbar a{display:inline-block; padding:7px 14px; border:1px solid var(--line); border-radius:8px;
+    text-decoration:none; color:var(--ink); font-size:14px; font-weight:600; background:#fafbfc}
+  .langbar a:hover{border-color:var(--brand); color:var(--brand)}
+  .box{border-radius:10px; padding:14px 16px; margin:16px 0; font-size:15px}
+  .box-brand{background:var(--brand-soft); border:1px solid #d4e1ff}
+  .box-ok{background:var(--ok-soft); border:1px solid #cfe9dd}
+  .box-no{background:var(--no-soft); border:1px solid #f6d6d3}
+  .box-warn{background:var(--warn-soft); border:1px solid #f0e0c0}
+  table{width:100%; border-collapse:collapse; margin:14px 0; font-size:14.5px}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+  th{background:#fafbfc; font-size:13.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted)}
+  tr:last-child td{border-bottom:none}
+  code{background:#f1f3f6; padding:1.5px 6px; border-radius:5px; font-size:14px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  a{color:var(--brand)}
+  .toc{columns:2; column-gap:26px; font-size:14.5px; margin:8px 0 0}
+  .toc a{display:block; padding:3px 0; text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  footer{color:var(--muted); font-size:13.5px; text-align:center; margin-top:8px}
+  hr.split{border:none; border-top:3px double var(--line); margin:40px 0 0}
+  @media (max-width:620px){ .toc{columns:1} .card{padding:22px 18px} body{padding:18px 12px 56px} }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hizmet Şartları</h1>
-        <p><strong>Yürürlük Tarihi:</strong> 20 Haziran 2025</p>
+<div class="wrap">
 
-        <h2>1. Genel Bilgilendirme</h2>
-        <p>
-            Bu Hizmet Şartları, <strong>FindCord</strong> (bundan sonra “bot” olarak anılacaktır) ile kullanıcılar arasında geçerlidir. 
-            Botu kullanmanız, bu şartları kabul ettiğiniz anlamına gelir.
-        </p>
+<header class="card">
+  <h1>FindCord — Kullanım Koşulları</h1>
+  <p class="meta">Yürürlük tarihi: <strong>4 Ekim 2026</strong> &nbsp;·&nbsp; Son güncelleme: 4 Ekim 2026</p>
+  <p class="meta">Kapsam: FindCord Discord botu (<code>FindCord#6066</code>), findcord.com web sitesi ve FindCord API</p>
+  <div class="langbar">
+    <a href="#tr">Türkçe</a>
+    <a href="#en">English version ↓</a>
+    <a href="privacy.html">Gizlilik Politikası / Privacy Policy</a>
+  </div>
+</header>
 
-        <h2>2. Botun Kullanımı</h2>
-        <p>Botun kullanım koşulları aşağıdaki gibidir:</p>
-        <ul>
-            <li>Discord’un <a href="https://discord.com/terms" target="_blank">Hizmet Şartları</a> ve <a href="https://discord.com/guidelines" target="_blank">Topluluk Kuralları</a>’na uyulmalıdır.</li>
-            <li>Bot, yasa dışı veya zararlı amaçlarla kullanılmamalıdır.</li>
-            <li>Botun çalışma sistemine müdahale edilmemeli ya da kötüye kullanılmamalıdır.</li>
-        </ul>
+<!-- ============================== TÜRKÇE ============================== -->
+<main class="card" id="tr">
 
-        <h2>3. Hesap ve Erişim</h2>
-        <p>
-            Bot, Discord kullanıcı ID’si üzerinden çalışır ve herhangi bir ek kayıt sistemi içermez. 
-            Kullanıcılar dilediği zaman botu sunucudan kaldırarak erişimi sonlandırabilir.
-        </p>
+<div class="box box-brand">
+  <strong>Kısa özet.</strong> FindCord bir sunucu yönetim ve sorgulama hizmetidir. Botu sunucunuza ekleyerek
+  veya web sitesini/API&rsquo;yi kullanarak bu koşulları kabul etmiş olursunuz. Botun yönetim özellikleri
+  <strong>varsayılan olarak kapalıdır</strong>; hangi özelliğin açılacağına <strong>sunucu yöneticisi</strong>
+  karar verir ve bu kararın sonuçlarından o sorumludur. Hizmet Discord&rsquo;un kurallarına tabidir ve
+  Discord ile resmî bir bağı yoktur.
+</div>
 
-        <h2>4. Sorumluluk Reddi</h2>
-        <ul>
-            <li>Bot, olduğu gibi sunulmaktadır. Hatalar veya kesintiler yaşanabilir.</li>
-            <li>Geliştirici(ler), botun kullanımı sonucu oluşabilecek doğrudan ya da dolaylı zararlardan sorumlu değildir.</li>
-            <li>Botun bazı özellikleri deneme veya beta aşamasında olabilir.</li>
-        </ul>
+<nav class="toc">
+  <a href="#t1">1. Taraflar ve kabul</a>
+  <a href="#t2">2. Hizmetin tanımı</a>
+  <a href="#t3">3. Uygunluk ve yaş</a>
+  <a href="#t4">4. Botun izinleri</a>
+  <a href="#t5">5. Sunucu yöneticisinin sorumluluğu</a>
+  <a href="#t6">6. Kabul edilebilir kullanım</a>
+  <a href="#t7">7. API kullanım koşulları</a>
+  <a href="#t8">8. Hizmetin sürekliliği</a>
+  <a href="#t9">9. Sorumluluğun sınırı</a>
+  <a href="#t10">10. Erişimin askıya alınması</a>
+  <a href="#t11">11. Veri ve gizlilik</a>
+  <a href="#t12">12. Fikri mülkiyet</a>
+  <a href="#t13">13. Discord ile ilişki</a>
+  <a href="#t14">14. Koşullardaki değişiklikler</a>
+  <a href="#t15">15. İletişim</a>
+</nav>
 
-        <h2>5. Değişiklik Hakkı</h2>
-        <p>
-            Bot geliştiricisi, Hizmet Şartları’nı herhangi bir zamanda değiştirme hakkını saklı tutar. 
-            Yapılan değişiklikler destek sunucusu veya resmi duyuru kanalları üzerinden yayınlanacaktır.
-        </p>
+<h2 id="t1">1. Taraflar ve kabul</h2>
+<p>Bu koşullar, FindCord hizmetini sunan FindCord ekibi ile hizmeti kullanan kişi ve sunucular arasındaki
+ilişkiyi düzenler. Aşağıdakilerden herhangi birini yaptığınızda bu koşulları kabul etmiş sayılırsınız:</p>
+<ul>
+  <li>FindCord botunu bir Discord sunucusuna eklemek,</li>
+  <li>FindCord botunun komutlarını kullanmak,</li>
+  <li>findcord.com web sitesini kullanmak,</li>
+  <li>FindCord API&rsquo;sine erişmek.</li>
+</ul>
+<p>Bu koşulları kabul etmiyorsanız botu sunucunuzdan kaldırmanız ve hizmeti kullanmamanız gerekir.</p>
 
-        <h2>6. Sonlandırma</h2>
-        <p>
-            Bot, kötüye kullanım, ihlal ya da teknik nedenlerle kullanıcıya önceden haber vermeksizin hizmeti durdurabilir.
-        </p>
+<h2 id="t2">2. Hizmetin tanımı</h2>
+<p>FindCord iki parçadan oluşur:</p>
+<ul>
+  <li><strong>Sunucu yönetim botu</strong> — üye kaydı (onboarding), otomatik moderasyon (raid koruması,
+      hesap yaşı kapısı, ceza kaçağı engelleme, takma ad politikası, özel durum denetimi), durum rolü,
+      yetkili nöbeti ve davet takibi. Botun tüm komutları eğik çizgi (<code>/</code>) komutudur.</li>
+  <li><strong>Sorgulama hizmeti</strong> — findcord.com ve FindCord API üzerinden, Discord&rsquo;da herkese
+      açık görünen profil ve istatistik bilgilerinin görüntülenmesi.</li>
+</ul>
+<div class="box box-ok">
+  <strong>Opt-in ilkesi.</strong> Bot bir sunucuya eklendiğinde yönetim özelliklerinin tamamı
+  <strong>kapalıdır</strong>. Her özellik <code>/koruma</code> panelinden sunucu yöneticisi tarafından
+  ayrı ayrı açılır.
+</div>
 
-        <h2>7. İletişim</h2>
-        <p>
-            Hizmet Şartları hakkında sorularınız varsa bizimle iletişime geçebilirsiniz:  
-            <strong>FindCord</strong>
-        </p>
+<h2 id="t3">3. Uygunluk ve yaş</h2>
+<ul>
+  <li>Hizmeti kullanmak için Discord&rsquo;un hizmet şartlarına uygun yaşta olmanız gerekir
+      (asgari <strong>13</strong> yaş; bulunduğunuz ülkede daha yüksek bir sınır varsa o geçerlidir).</li>
+  <li>Botu bir sunucuya ekleyebilmek için o sunucuda <strong>Sunucuyu Yönet</strong> yetkisine sahip
+      olmanız gerekir.</li>
+  <li>Hizmeti kullanırken Discord&rsquo;un <em>Terms of Service</em> ve <em>Community Guidelines</em>
+      kurallarına uymak zorunludur.</li>
+</ul>
 
-        <div class="footer">
-            &copy; 2025 FindCord | Tüm hakları saklıdır.
-        </div>
-    </div>
+<h2 id="t4">4. Botun izinleri</h2>
+<p>Bot, davet sırasında istenen Discord izinlerini yalnızca açıkladığı işlevler için kullanır:</p>
+<table>
+  <thead><tr><th>İzin</th><th>Ne için gerekli</th></tr></thead>
+  <tbody>
+    <tr><td>Rolleri Yönet</td><td>Kayıt rolleri, kayıtsız rolü, ceza rolü ve durum rolünün verilip alınması</td></tr>
+    <tr><td>Takma Adları Yönet</td><td>Kayıt sırasında takma ad atama ve takma ad politikasının uygulanması</td></tr>
+    <tr><td>Üyeleri Zaman Aşımına Al</td><td>Hesap yaşı kapısı ve özel durum denetiminde zaman aşımı işlemi</td></tr>
+    <tr><td>Üyeleri At</td><td>Yalnızca yönetici &ldquo;at&rdquo; işlemini seçtiyse hesap yaşı kapısında</td></tr>
+    <tr><td>Sunucuyu Yönet</td><td>Raid korumasında doğrulama seviyesinin geçici yükseltilmesi ve davet takibi</td></tr>
+    <tr><td>Denetim Kaydını Görüntüle</td><td>Ceza kayıtlarında işlemi yapan yetkilinin ve sebebin okunması</td></tr>
+    <tr><td>Mesaj Gönder / Bağlantı Ekle / Geçmişi Oku</td><td>Komut yanıtlarının ve log kartlarının gönderilmesi</td></tr>
+  </tbody>
+</table>
+<div class="box box-no">
+  <strong>Kullanılmayan izin:</strong> Bot, Discord&rsquo;un <em>Message Content</em> (mesaj içeriği) iznini
+  <strong>kullanmaz</strong> ve sunucudaki mesaj metinlerini okumaz. Tüm komutlar eğik çizgi komutu olarak
+  çalışır.
+</div>
+
+<h2 id="t5">5. Sunucu yöneticisinin sorumluluğu</h2>
+<p>Hangi özelliğin açılacağına, hangi rollerin ve kanalların seçileceğine, hangi kelimelerin yasaklanacağına
+ve hangi işlemin (kayıt, rol alma, zaman aşımı, atma) uygulanacağına <strong>sunucu yöneticisi</strong>
+karar verir. Buna bağlı olarak:</p>
+<ul>
+  <li>Yapılandırmanın sonuçlarından ve sunucu üyelerine uygulanan işlemlerden sunucu yöneticisi sorumludur.</li>
+  <li>Yönetici, sunucusunda hangi verilerin üretildiğini ve bunun üyelerine bildirilmesini kendi
+      sorumluluğunda yönetir.</li>
+  <li>Yanlış yapılandırma sonucu oluşan rol/erişim kayıplarından FindCord sorumlu tutulamaz. Raid
+      korumasının uyguladığı kilit <strong>geri alınabilir</strong> niteliktedir; bot kendi başına
+      üye atmaz veya yasaklamaz (yönetici bu işlemi açıkça seçmedikçe).</li>
+</ul>
+
+<h2 id="t6">6. Kabul edilebilir kullanım</h2>
+<p>Aşağıdakiler <strong>yasaktır</strong>:</p>
+<ul>
+  <li>Hizmeti taciz, tehdit, hedef gösterme veya kişilerin rızası olmadan takip amacıyla kullanmak.</li>
+  <li>Sorgu sonuçlarını kişileri fişlemek, şantaj yapmak veya kişisel verileri dağıtmak (doxxing) için
+      kullanmak.</li>
+  <li>Hizmeti otomatik araçlarla kitlesel olarak taramak, verileri toplu kopyalamak (scraping) veya
+      kendi veritabanınızı oluşturmak.</li>
+  <li>Hizmetin verilerini izinsiz olarak yeniden satmak, kiralamak veya başka bir hizmete aktarmak.</li>
+  <li>Hız sınırlarını aşmaya çalışmak, birden fazla hesap/anahtar ile sınırları aşmak, hizmete aşırı yük
+      bindirmek veya kesintiye uğratmak.</li>
+  <li>API anahtarını paylaşmak, satmak veya herkese açık bir istemcide (web sayfası, uygulama kaynak kodu)
+      yayımlamak.</li>
+  <li>Hizmeti Discord&rsquo;un kurallarına, kullanıcı hesabı otomasyonuna (selfbot) veya yürürlükteki
+      mevzuata aykırı biçimde kullanmak.</li>
+</ul>
+
+<h2 id="t7">7. API kullanım koşulları</h2>
+<ul>
+  <li>API erişimi <strong>kişiye özel bir anahtar</strong> ile verilir ve anahtarın güvenliği sahibinin
+      sorumluluğundadır. Anahtarınızla yapılan tüm istekler size aittir.</li>
+  <li>API <strong>hız sınırlarına</strong> tabidir. Sınırların aşılması durumunda istekler geçici olarak
+      reddedilir; sürekli ihlalde anahtar iptal edilebilir.</li>
+  <li>API yalnızca <strong>herkese açık</strong> profil ve istatistik verisi döndürür. Gizlilik ayarını
+      açan kullanıcıların verileri döndürülmez.</li>
+  <li>API ile elde edilen veriler kalıcı olarak kopyalanıp bağımsız bir hizmet olarak sunulamaz.</li>
+  <li>API&rsquo;yi kullanan uygulamalar, kendi kullanıcılarına karşı kendi gizlilik politikalarından
+      sorumludur.</li>
+</ul>
+
+<h2 id="t8">8. Hizmetin sürekliliği</h2>
+<ul>
+  <li>Hizmet &ldquo;olduğu gibi&rdquo; sunulur. Kesintisiz veya hatasız çalışacağı garanti edilmez.</li>
+  <li>Bakım, güncelleme veya teknik arıza nedeniyle hizmete geçici olarak erişilemeyebilir. Planlı bakımlar
+      bot üzerinden ve destek sunucusunda duyurulur.</li>
+  <li>Özellikler zaman içinde eklenebilir, değiştirilebilir veya kaldırılabilir. Kullanıcı deneyimini
+      doğrudan etkileyen değişiklikler duyurulur.</li>
+  <li>Discord&rsquo;un API&rsquo;sinde veya politikalarında yapılan değişiklikler bazı özelliklerin
+      kısıtlanmasına veya kaldırılmasına yol açabilir.</li>
+</ul>
+
+<h2 id="t9">9. Sorumluluğun sınırı</h2>
+<p>Yürürlükteki mevzuatın izin verdiği ölçüde FindCord; hizmetin kullanımından veya kullanılamamasından
+doğan dolaylı zararlardan, veri kaybından, kâr kaybından veya sunucu yönetiminin yapılandırma
+tercihlerinden kaynaklanan sonuçlardan sorumlu tutulamaz. Hizmet, hukuki danışmanlık veya resmî bir
+kimlik doğrulama aracı değildir; sunulan bilgiler Discord&rsquo;un sağladığı herkese açık verilere
+dayanır ve hata içerebilir.</p>
+
+<h2 id="t10">10. Erişimin askıya alınması</h2>
+<p>Aşağıdaki durumlarda bir kullanıcının, sunucunun veya API anahtarının erişimi önceden bildirim
+yapılmaksızın askıya alınabilir veya kalıcı olarak kapatılabilir:</p>
+<ul>
+  <li>Bölüm 6&rsquo;daki kabul edilebilir kullanım kurallarının ihlali,</li>
+  <li>Discord&rsquo;un hizmet şartlarının ihlali,</li>
+  <li>hizmete kasıtlı aşırı yük bindirme veya güvenlik açığı sömürme girişimi,</li>
+  <li>sorgu verilerinin taciz/doxxing amacıyla kullanıldığına dair makul bulgu.</li>
+</ul>
+<p>İtirazınızı destek sunucusu üzerinden iletebilirsiniz.</p>
+
+<h2 id="t11">11. Veri ve gizlilik</h2>
+<p>Hangi verilerin toplandığı, hangi amaçla kullanıldığı, ne kadar süre saklandığı ve bu veriler
+üzerindeki haklarınız <a href="privacy.html">Gizlilik Politikası</a>&rsquo;nda açıklanmıştır. Gizlilik
+Politikası bu koşulların ayrılmaz bir parçasıdır.</p>
+<p>Özetle: mesaj içerikleri okunmaz ve saklanmaz; yönetim özellikleri varsayılan olarak kapalıdır;
+belirli kayıtlar 30&ndash;180 gün sonra otomatik silinir; profilinizi gizleyebilir veya verilerinizin
+tamamen silinmesini talep edebilirsiniz.</p>
+
+<h2 id="t12">12. Fikri mülkiyet</h2>
+<p>FindCord adı, logosu, web sitesi tasarımı ve bot kaynak kodu FindCord ekibine aittir. Hizmetin
+arayüzünü veya kodunu izinsiz kopyalayıp kendi hizmetiniz olarak sunamazsınız. Discord adı, logosu ve
+ilgili markalar Discord Inc.&rsquo;e aittir.</p>
+
+<h2 id="t13">13. Discord ile ilişki</h2>
+<p>FindCord <strong>bağımsız bir projedir</strong>; Discord Inc. tarafından geliştirilmemiş, desteklenmemiş
+veya onaylanmamıştır. Hizmet Discord&rsquo;un genel API&rsquo;si üzerinden çalışır ve Discord&rsquo;un
+geliştirici politikalarına uymayı taahhüt eder.</p>
+
+<h2 id="t14">14. Koşullardaki değişiklikler</h2>
+<p>Bu koşullar zaman zaman güncellenebilir. Önemli değişiklikler destek sunucumuzda duyurulur ve sayfanın
+üstündeki <em>Son güncelleme</em> tarihi yenilenir. Değişiklikten sonra hizmeti kullanmaya devam etmek,
+güncellenmiş koşulları kabul ettiğiniz anlamına gelir.</p>
+
+<h2 id="t15">15. İletişim</h2>
+<ul>
+  <li><strong>Destek sunucusu:</strong> <a href="https://discord.gg/findcord">discord.gg/findcord</a></li>
+  <li><strong>Web sitesi:</strong> <a href="https://findcord.com">findcord.com</a></li>
+  <li><strong>Yanıt süresi:</strong> genellikle 1&ndash;2 iş günü</li>
+</ul>
+
+</main>
+
+<hr class="split">
+
+<!-- ============================== ENGLISH ============================== -->
+<main class="card" id="en" lang="en">
+
+<h1 style="font-size:24px">FindCord — Terms of Service (English)</h1>
+<p class="meta">Effective date: <strong>4 October 2026</strong> · Last updated: 4 October 2026</p>
+<p class="meta">Scope: the FindCord Discord bot, findcord.com and the FindCord API.
+This English text is a translation of the Turkish version above; both have the same meaning.</p>
+
+<div class="box box-brand">
+  <strong>Summary.</strong> FindCord is a server management and lookup service. By adding the bot to your
+  server or using the website/API you accept these terms. The bot&rsquo;s management features are
+  <strong>disabled by default</strong>; the <strong>server administrator</strong> decides which features to
+  enable and is responsible for the consequences of that configuration. The service is subject to
+  Discord&rsquo;s rules and is not affiliated with Discord.
+</div>
+
+<h2>1. Acceptance</h2>
+<p>You accept these terms when you add the FindCord bot to a Discord server, use its commands, use
+findcord.com, or access the FindCord API. If you do not accept them, remove the bot and stop using the
+service.</p>
+
+<h2>2. What the service is</h2>
+<ul>
+  <li><strong>Server management bot</strong> — member registration (onboarding), automated moderation
+      (anti-raid, account-age gate, punishment-evasion protection, nickname policy, custom-status
+      moderation), status roles, staff availability and invite attribution. All commands are slash commands.</li>
+  <li><strong>Lookup service</strong> — viewing publicly visible Discord profile and statistics information
+      through findcord.com and the FindCord API.</li>
+</ul>
+<div class="box box-ok">
+  <strong>Opt-in by design.</strong> All management features are <strong>off</strong> when the bot joins a
+  server; each one is enabled individually by an administrator through the <code>/koruma</code> panel.
+</div>
+
+<h2>3. Eligibility and age</h2>
+<ul>
+  <li>You must meet Discord&rsquo;s minimum age requirement (at least <strong>13</strong>, or higher where
+      local law requires).</li>
+  <li>Adding the bot to a server requires the <strong>Manage Server</strong> permission in that server.</li>
+  <li>You must comply with Discord&rsquo;s Terms of Service and Community Guidelines.</li>
+</ul>
+
+<h2>4. Bot permissions</h2>
+<p>The bot uses the Discord permissions requested at invite time only for the stated functions:</p>
+<table>
+  <thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead>
+  <tbody>
+    <tr><td>Manage Roles</td><td>Granting and removing registration, unregistered, punishment and status roles</td></tr>
+    <tr><td>Manage Nicknames</td><td>Setting nicknames during registration and enforcing the nickname policy</td></tr>
+    <tr><td>Moderate Members</td><td>Timeouts applied by the account-age gate and custom-status moderation</td></tr>
+    <tr><td>Kick Members</td><td>Only if an administrator selected the &ldquo;kick&rdquo; action in the account-age gate</td></tr>
+    <tr><td>Manage Server</td><td>Temporarily raising the verification level during anti-raid, and invite attribution</td></tr>
+    <tr><td>View Audit Log</td><td>Reading the acting moderator and reason for moderation records</td></tr>
+    <tr><td>Send Messages / Embed Links / Read History</td><td>Sending command responses and log cards</td></tr>
+  </tbody>
+</table>
+<div class="box box-no">
+  <strong>Not used:</strong> the bot does <strong>not</strong> use Discord&rsquo;s <em>Message Content</em>
+  intent and does not read message text in servers. All commands are slash commands.
+</div>
+
+<h2>5. Server administrator responsibility</h2>
+<p>The server administrator decides which features are enabled, which roles and channels are selected,
+which terms are banned and which action is applied. Accordingly:</p>
+<ul>
+  <li>The administrator is responsible for the configuration and for actions applied to their members.</li>
+  <li>FindCord is not liable for role or access loss caused by misconfiguration. The anti-raid lock is
+      <strong>reversible</strong>, and the bot never kicks or bans members on its own unless an
+      administrator explicitly selected that action.</li>
+</ul>
+
+<h2>6. Acceptable use</h2>
+<p>The following are <strong>prohibited</strong>:</p>
+<ul>
+  <li>Using the service to harass, threaten, target or stalk people.</li>
+  <li>Using lookup results for blackmail or to publish personal information (doxxing).</li>
+  <li>Mass-scanning the service with automated tools, bulk-copying data (scraping) or building your own
+      database from it.</li>
+  <li>Reselling, renting or transferring the service&rsquo;s data without permission.</li>
+  <li>Attempting to bypass rate limits, using multiple accounts or keys to exceed limits, or overloading
+      or disrupting the service.</li>
+  <li>Sharing, selling or publishing your API key in a public client.</li>
+  <li>Using the service in breach of Discord&rsquo;s rules (including user-account automation / selfbots)
+      or applicable law.</li>
+</ul>
+
+<h2>7. API terms</h2>
+<ul>
+  <li>API access is granted through a <strong>personal key</strong>; keeping it secure is the holder&rsquo;s
+      responsibility and all requests made with it are attributed to them.</li>
+  <li>The API is subject to <strong>rate limits</strong>. Exceeding them results in temporary rejection;
+      repeated abuse may lead to key revocation.</li>
+  <li>The API returns only <strong>publicly visible</strong> profile and statistics data. Data of users who
+      enabled a privacy setting is not returned.</li>
+  <li>Data obtained through the API may not be permanently copied and offered as an independent service.</li>
+  <li>Applications using the API are responsible for their own privacy policies towards their users.</li>
+</ul>
+
+<h2>8. Availability</h2>
+<ul>
+  <li>The service is provided &ldquo;as is&rdquo;, without a guarantee of uninterrupted or error-free operation.</li>
+  <li>Access may be temporarily unavailable due to maintenance, updates or technical faults. Planned
+      maintenance is announced through the bot and the support server.</li>
+  <li>Features may be added, changed or removed over time; changes that directly affect users are announced.</li>
+  <li>Changes in Discord&rsquo;s API or policies may restrict or remove certain features.</li>
+</ul>
+
+<h2>9. Limitation of liability</h2>
+<p>To the extent permitted by law, FindCord is not liable for indirect damages, data loss, lost profits or
+consequences arising from a server&rsquo;s configuration choices. The service is not legal advice or an
+official identity verification tool; the information shown is based on publicly available Discord data and
+may contain errors.</p>
+
+<h2>10. Suspension of access</h2>
+<p>Access for a user, server or API key may be suspended or terminated without prior notice in case of:
+breach of section 6, breach of Discord&rsquo;s Terms of Service, deliberate overloading or exploitation
+attempts, or reasonable evidence that lookup data is being used for harassment or doxxing. Appeals can be
+submitted through the support server.</p>
+
+<h2>11. Data and privacy</h2>
+<p>What data is collected, why, how long it is retained and your rights over it are described in our
+<a href="privacy.html">Privacy Policy</a>, which forms an integral part of these terms. In short: message
+content is never read or stored; management features are off by default; time-limited records are deleted
+automatically after 30&ndash;180 days; you can hide your profile or request full deletion.</p>
+
+<h2>12. Intellectual property</h2>
+<p>The FindCord name, logo, website design and bot source code belong to the FindCord team and may not be
+copied and offered as your own service. Discord&rsquo;s name, logo and related marks belong to Discord Inc.</p>
+
+<h2>13. Relationship with Discord</h2>
+<p>FindCord is an <strong>independent project</strong>, not developed, endorsed or certified by Discord Inc.
+It operates through Discord&rsquo;s public API and undertakes to comply with Discord&rsquo;s developer
+policies.</p>
+
+<h2>14. Changes to these terms</h2>
+<p>These terms may be updated from time to time. Significant changes are announced in our support server
+and the <em>Last updated</em> date at the top is revised. Continuing to use the service after a change
+means accepting the updated terms.</p>
+
+<h2>15. Contact</h2>
+<ul>
+  <li><strong>Support server:</strong> <a href="https://discord.gg/findcord">discord.gg/findcord</a></li>
+  <li><strong>Website:</strong> <a href="https://findcord.com">findcord.com</a></li>
+  <li><strong>Response time:</strong> usually 1&ndash;2 business days</li>
+</ul>
+
+</main>
+
+<footer>
+  FindCord · <a href="privacy.html">Gizlilik Politikası / Privacy Policy</a> ·
+  <a href="terms.html">Kullanım Koşulları / Terms of Service</a> ·
+  <a href="https://findcord.com">findcord.com</a>
+</footer>
+
+</div>
 </body>
 </html>
