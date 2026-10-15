@@ -1,462 +1,893 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gizlilik Politikası — FindCord</title>
-<meta name="description" content="FindCord Discord botu ve web sitesi gizlilik politikası: toplanan veriler, kullanım amaçları, saklama süreleri ve kullanıcı hakları. / FindCord privacy policy (Turkish and English).">
-<style>
-  :root{
-    --bg:#f5f6f8; --card:#ffffff; --ink:#1f2430; --muted:#5b6474; --line:#e4e7ec;
-    --brand:#2f6fed; --brand-soft:#eef3ff; --ok:#0f7b4f; --ok-soft:#e8f6ef;
-    --warn:#8a5300; --warn-soft:#fdf3e3; --no:#b42318; --no-soft:#fdeceb;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0; padding:32px 16px 72px;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg); color:var(--ink); line-height:1.65; font-size:16px;
-  }
-  .wrap{max-width:860px; margin:0 auto}
-  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px 30px; margin-bottom:20px}
-  header.card{border-top:4px solid var(--brand)}
-  h1{margin:0 0 6px; font-size:28px; letter-spacing:-.3px}
-  h2{margin:34px 0 10px; font-size:20px; letter-spacing:-.2px; padding-bottom:6px; border-bottom:1px solid var(--line)}
-  h3{margin:22px 0 8px; font-size:16px}
-  p{margin:10px 0}
-  ul{margin:10px 0 10px 20px; padding:0}
-  li{margin:6px 0}
-  .meta{color:var(--muted); font-size:14px; margin:0}
-  .pill{display:inline-block; padding:3px 10px; border-radius:999px; font-size:12.5px; font-weight:600; white-space:nowrap}
-  .pill-brand{background:var(--brand-soft); color:var(--brand)}
-  .pill-ok{background:var(--ok-soft); color:var(--ok)}
-  .pill-no{background:var(--no-soft); color:var(--no)}
-  .langbar{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-  .langbar a{display:inline-block; padding:7px 14px; border:1px solid var(--line); border-radius:8px;
-    text-decoration:none; color:var(--ink); font-size:14px; font-weight:600; background:#fafbfc}
-  .langbar a:hover{border-color:var(--brand); color:var(--brand)}
-  .box{border-radius:10px; padding:14px 16px; margin:16px 0; font-size:15px}
-  .box-brand{background:var(--brand-soft); border:1px solid #d4e1ff}
-  .box-ok{background:var(--ok-soft); border:1px solid #cfe9dd}
-  .box-no{background:var(--no-soft); border:1px solid #f6d6d3}
-  .box-warn{background:var(--warn-soft); border:1px solid #f0e0c0}
-  table{width:100%; border-collapse:collapse; margin:14px 0; font-size:14.5px}
-  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top}
-  th{background:#fafbfc; font-size:13.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted)}
-  tr:last-child td{border-bottom:none}
-  code{background:#f1f3f6; padding:1.5px 6px; border-radius:5px; font-size:14px;
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-  a{color:var(--brand)}
-  .toc{columns:2; column-gap:26px; font-size:14.5px; margin:8px 0 0}
-  .toc a{display:block; padding:3px 0; text-decoration:none}
-  .toc a:hover{text-decoration:underline}
-  footer{color:var(--muted); font-size:13.5px; text-align:center; margin-top:8px}
-  hr.split{border:none; border-top:3px double var(--line); margin:40px 0 0}
-  @media (max-width:620px){ .toc{columns:1} .card{padding:22px 18px} body{padding:18px 12px 56px} }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gizlilik Politikası — FindCord</title>
+  <meta name="description" content="FindCord Discord botu gizlilik politikası: işlenen veriler, kullanım amaçları, saklama süreleri, güvenlik ve kullanıcı hakları.">
+
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --card: #ffffff;
+      --ink: #1f2430;
+      --muted: #5b6474;
+      --line: #e4e7ec;
+      --brand: #2f6fed;
+      --brand-soft: #eef3ff;
+      --ok: #0f7b4f;
+      --ok-soft: #e8f6ef;
+      --warn: #8a5300;
+      --warn-soft: #fdf3e3;
+      --no: #b42318;
+      --no-soft: #fdeceb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px 16px 72px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px 30px;
+      margin-bottom: 20px;
+    }
+
+    header.card {
+      border-top: 4px solid var(--brand);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 28px;
+      letter-spacing: -.3px;
+    }
+
+    h2 {
+      margin: 34px 0 10px;
+      font-size: 20px;
+      letter-spacing: -.2px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 16px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    ul {
+      margin: 10px 0 10px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .pill-brand {
+      background: var(--brand-soft);
+      color: var(--brand);
+    }
+
+    .pill-ok {
+      background: var(--ok-soft);
+      color: var(--ok);
+    }
+
+    .pill-no {
+      background: var(--no-soft);
+      color: var(--no);
+    }
+
+    .langbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .langbar a {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
+      background: #fafbfc;
+    }
+
+    .langbar a:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
+    .box {
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .box-brand {
+      background: var(--brand-soft);
+      border: 1px solid #d4e1ff;
+    }
+
+    .box-ok {
+      background: var(--ok-soft);
+      border: 1px solid #cfe9dd;
+    }
+
+    .box-no {
+      background: var(--no-soft);
+      border: 1px solid #f6d6d3;
+    }
+
+    .box-warn {
+      background: var(--warn-soft);
+      border: 1px solid #f0e0c0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 14.5px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: #fafbfc;
+      font-size: 13.5px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--muted);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    code {
+      background: #f1f3f6;
+      padding: 1.5px 6px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    a {
+      color: var(--brand);
+    }
+
+    .toc {
+      columns: 2;
+      column-gap: 26px;
+      font-size: 14.5px;
+      margin: 8px 0 0;
+    }
+
+    .toc a {
+      display: block;
+      padding: 3px 0;
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 13.5px;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    hr.split {
+      border: none;
+      border-top: 3px double var(--line);
+      margin: 40px 0 0;
+    }
+
+    @media (max-width: 620px) {
+      .toc {
+        columns: 1;
+      }
+
+      .card {
+        padding: 22px 18px;
+      }
+
+      body {
+        padding: 18px 12px 56px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 <div class="wrap">
 
-<header class="card">
-  <h1>FindCord — Gizlilik Politikası</h1>
-  <p class="meta">Yürürlük tarihi: <strong>4 Ekim 2026</strong> &nbsp;·&nbsp; Son güncelleme: 4 Ekim 2026</p>
-  <p class="meta">Kapsam: FindCord Discord botu (<code>FindCord#6066</code>), findcord.com web sitesi ve FindCord API</p>
-  <div class="langbar">
-    <a href="#tr">Türkçe</a>
-    <a href="#en">English version ↓</a>
+  <header class="card">
+    <h1>FindCord — Gizlilik Politikası</h1>
+    <p class="meta">
+      Yürürlük tarihi: <strong>15 Ekim 2026</strong>
+      &nbsp;·&nbsp;
+      Son güncelleme: 15 Ekim 2026
+    </p>
+    <p class="meta">Kapsam: FindCord Discord botu ve botun Discord sunucularında sunduğu özellikler.</p>
+
+    <div class="langbar">
+      <a href="#tr">Türkçe</a>
+      <a href="#en">English version ↓</a>
+      <a href="terms.html">Kullanım Koşulları / Terms of Service</a>
+    </div>
+  </header>
+
+  <!-- ============================== TÜRKÇE ============================== -->
+
+  <main class="card" id="tr">
+
+    <div class="box box-brand">
+      <strong>Kısa özet.</strong>
+      FindCord, Discord botunun etkinleştirilen özelliklerini çalıştırmak için gerekli verileri işler.
+      Veriler yalnızca ilgili özelliklerin sunulması, sunucu yönetimi ve hizmet güvenliği amaçlarıyla
+      kullanılmalıdır. Mesaj içerikleri ve ses kayıtlarıyla ilgili uygulamalar, botun gerçek çalışma
+      biçimiyle uyumlu olmalıdır. Kullanıcılar kendileriyle ilgili veriler hakkında bilgi veya silme
+      talebinde bulunabilir.
+    </div>
+
+    <nav class="toc">
+      <a href="#t1">1. Hizmetin tanımı</a>
+      <a href="#t2">2. İşlenen veriler</a>
+      <a href="#t3">3. İşlenmeyen veriler</a>
+      <a href="#t4">4. Verilerin kullanım amaçları</a>
+      <a href="#t5">5. Saklama süreleri</a>
+      <a href="#t6">6. Kullanıcı hakları</a>
+      <a href="#t7">7. Üçüncü taraflarla paylaşım</a>
+      <a href="#t8">8. Güvenlik</a>
+      <a href="#t9">9. Yaş sınırı</a>
+      <a href="#t10">10. Politika değişiklikleri</a>
+      <a href="#t11">11. İletişim</a>
+    </nav>
+
+    <h2 id="t1">1. Hizmetin tanımı</h2>
+
+    <p>
+      FindCord, Discord sunucularında sunucu yönetimi, üye kayıt işlemleri, moderasyon,
+      sunucu güvenliği, davet takibi ve çeşitli yönetim araçları sağlayan bir Discord botudur.
+    </p>
+
+    <p>
+      Botun sunduğu özellikler, Discord tarafından sağlanan erişim izinleri ve ilgili sunucuda
+      etkinleştirilen yapılandırmalar kapsamında çalışır.
+    </p>
+
+    <div class="box box-ok">
+      <strong>Özelliklerin etkinleştirilmesi.</strong>
+      Sunucu yöneticileri, botun sunduğu yapılandırılabilir özellikleri ihtiyaçlarına göre
+      etkinleştirmeli ve gerekli izinleri kontrol etmelidir. Bir özelliğin etkinleştirilmesi,
+      o özellikle ilgisiz verilerin toplanmasına izin vermez.
+    </div>
+
+    <h2 id="t2">2. İşlenen veriler</h2>
+
+    <p>
+      Botun yapılandırmasına, etkinleştirilen özelliklere ve Discord tarafından verilen izinlere
+      bağlı olarak aşağıdaki veri kategorileri işlenebilir.
+    </p>
+
+    <h3>A. Temel kullanıcı bilgileri</h3>
+
+    <ul>
+      <li>
+        <strong>Discord kimliği:</strong>
+        Kullanıcı kimliği, kullanıcı adı, görünen ad ve sunucu takma adı gibi gerekli bilgiler.
+      </li>
+      <li>
+        <strong>Sunucu ve rol bilgileri:</strong>
+        Botun bulunduğu sunuculardaki üyelik ve rol bilgileri; yalnızca ilgili özelliğin
+        çalışması için gerekli olduğu ölçüde.
+      </li>
+    </ul>
+
+    <h3>B. Sunucu yönetimi verileri</h3>
+
+    <ul>
+      <li>
+        <strong>Sunucu ayarları:</strong>
+        Yönetici tarafından belirlenen roller, kanallar, güvenlik seçenekleri ve diğer
+        yapılandırma bilgileri.
+      </li>
+      <li>
+        <strong>Üye kayıt bilgileri:</strong>
+        Kayıt sistemi kullanılıyorsa kayıt sırasında girilen isim, yaş, oluşturulan takma ad,
+        işlem tarihi ve kaydı gerçekleştiren yetkilinin kimliği.
+      </li>
+      <li>
+        <strong>Moderasyon kayıtları:</strong>
+        Bot üzerinden gerçekleştirilen yasaklama, sunucudan atma, susturma ve zaman aşımı
+        işlemlerinin türü, ilgili kullanıcı, tarih ve belirtilen işlem gerekçesi.
+      </li>
+      <li>
+        <strong>Güvenlik kayıtları:</strong>
+        Etkinleştirilen koruma özelliklerinin çalışması için gerekli olaylar, tespit edilen
+        ihlaller ve uygulanan işlemler.
+      </li>
+      <li>
+        <strong>Davet takibi:</strong>
+        Davet özelliği etkinse davet kodu, davet eden üye ve katılım zamanı gibi gerekli bilgiler.
+      </li>
+      <li>
+        <strong>Komut kullanım bilgileri:</strong>
+        Teknik sorunların tespiti ve botun işleyişinin değerlendirilmesi için gerekli komut
+        kullanım kayıtları. Komut argümanları veya mesaj içerikleri, gerekli olmadığı sürece
+        kaydedilmemelidir.
+      </li>
+    </ul>
+
+    <div class="box box-brand">
+      <strong>Veri minimizasyonu.</strong>
+      Veriler yalnızca belirtilen amaçlar için gerekli olduğu ölçüde işlenir.
+      Bir özellik için gerekli olmayan kişisel veriler toplanmamalı veya saklanmamalıdır.
+    </div>
+
+    <h2 id="t3">3. İşlenmeyen veriler</h2>
+
+    <p>
+      Aşağıdaki açıklamalar, botun gerçek yapılandırmasıyla doğrulandığı ölçüde geçerlidir.
+    </p>
+
+    <div class="box box-no">
+      <ul style="margin:0 0 0 20px">
+        <li>
+          <strong>Discord hesap şifreleri:</strong>
+          Kullanıcıların Discord şifreleri istenmez.
+        </li>
+        <li>
+          <strong>Ödeme bilgileri:</strong>
+          Botun işlevleri için gerekli değilse kart veya ödeme bilgileri toplanmaz.
+        </li>
+        <li>
+          <strong>Özel mesajlar:</strong>
+          Bot, özel mesaj içeriklerini ancak gerekli erişim ve işlev söz konusuysa işleyebilir.
+          Böyle bir işlev bulunmuyorsa özel mesajların toplanmadığı belirtilmelidir.
+        </li>
+        <li>
+          <strong>Mesaj içerikleri:</strong>
+          Botun mesaj içeriği erişimi kullanıp kullanmadığı ve mesajları kaydedip kaydetmediği,
+          kullanılan Discord izinleri ve uygulama kodu üzerinden doğrulanmalıdır.
+        </li>
+        <li>
+          <strong>Ses kayıtları:</strong>
+          Sesli konuşmalar gerçekten dinlenmiyor ve kaydedilmiyorsa bu bilgi geçerlidir.
+          Ses kanalı katılım olayları, ses kaydıyla aynı şey değildir.
+        </li>
+      </ul>
+    </div>
+
+    <h2 id="t4">4. Verilerin kullanım amaçları</h2>
+
+    <p>İşlenen veriler yalnızca ilgili ve meşru hizmet amaçları doğrultusunda kullanılmalıdır:</p>
+
+    <ul>
+      <li>Üye kayıt sisteminin çalıştırılması.</li>
+      <li>Sunucu yöneticilerinin etkinleştirdiği moderasyon ve güvenlik özelliklerinin yürütülmesi.</li>
+      <li>Sunucu ayarlarının ve rol yapılandırmalarının uygulanması.</li>
+      <li>Davet takibi gibi isteğe bağlı sunucu yönetimi özelliklerinin sağlanması.</li>
+      <li>Teknik hataların tespit edilmesi ve hizmet güvenliğinin korunması.</li>
+      <li>Moderasyon işlemlerinin ilgili sunucu yetkilileri tarafından incelenebilmesi.</li>
+    </ul>
+
+    <p>
+      Veriler, bu amaçlarla ilgisiz reklam hedefleme, kullanıcı profili oluşturma veya veri satışı
+      amacıyla kullanılmamalıdır. Verilerin başka bir amaçla işlenmesi gerekiyorsa bu amaç,
+      gerekli hukuki dayanak ve bilgilendirmeyle ayrıca değerlendirilmelidir.
+    </p>
+
+    <h2 id="t5">5. Saklama süreleri</h2>
+
+    <p>
+      Veriler yalnızca ilgili özelliğin çalışması için gerekli süre boyunca saklanır.
+      Saklama süreleri, veri kategorisine ve geçerli hukuki yükümlülüklere göre belirlenmelidir.
+      Artık gerekli olmayan veriler güvenli şekilde silinmeli veya uygun olduğu durumlarda
+      kimlikle ilişkilendirilemeyecek hâle getirilmelidir.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Veri kategorisi</th>
+          <th>Saklama ilkesi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sunucu yapılandırmaları</td>
+          <td>Özellik için gerekli olduğu süre boyunca.</td>
+        </tr>
+        <tr>
+          <td>Üye kayıt bilgileri</td>
+          <td>Belirlenen kayıt saklama politikası ve geçerli yükümlülükler kapsamında.</td>
+        </tr>
+        <tr>
+          <td>Moderasyon kayıtları</td>
+          <td>Sunucu yönetimi için gerekli süre boyunca ve belirlenen silme politikası kapsamında.</td>
+        </tr>
+        <tr>
+          <td>Güvenlik ve ihlal kayıtları</td>
+          <td>Güvenlik amacı için gerekli süre boyunca.</td>
+        </tr>
+        <tr>
+          <td>Davet ve komut kullanım kayıtları</td>
+          <td>İlgili özellik için gerekli süre boyunca.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box box-warn">
+      <strong>Önemli:</strong>
+      Gerçekte uygulanmayan otomatik silme süreleri veya verilerin belirli bir süre sonunda
+      kesinlikle silineceğine ilişkin taahhütler yayımlanmamalıdır. Veritabanındaki gerçek
+      saklama ve silme mekanizmaları bu politikayla uyumlu olmalıdır.
+    </div>
+
+    <h2 id="t6">6. Kullanıcı hakları</h2>
+
+    <p>
+      Kullanıcılar, kendileriyle ilgili işlenen veriler hakkında bilgi almak, hatalı verilerin
+      düzeltilmesini istemek ve uygun olduğu durumlarda verilerinin silinmesini talep etmek
+      için destek ekibiyle iletişime geçebilir.
+    </p>
+
+    <ul>
+      <li><strong>Bilgi alma:</strong> Hangi kişisel verilerin işlendiği hakkında bilgi talep etme.</li>
+      <li><strong>Düzeltme:</strong> Hatalı veya eksik kişisel verilerin düzeltilmesini isteme.</li>
+      <li><strong>Silme:</strong> Uygulanabilir olduğu durumlarda kişisel verilerin silinmesini isteme.</li>
+      <li><strong>İtiraz ve kısıtlama:</strong> Geçerli veri koruma mevzuatının tanıdığı durumlarda işleme itiraz etme veya işlemenin kısıtlanmasını isteme.</li>
+    </ul>
+
+    <p>
+      Talepler, talepte bulunan kişinin kimliği makul şekilde doğrulandıktan sonra değerlendirilir.
+      Silme talepleri geçerli yasal saklama yükümlülükleri ve üçüncü kişilerin hakları dikkate
+      alınarak sonuçlandırılır.
+    </p>
+
+    <p>
+      Destek sunucusu:
+      <a href="https://discord.gg/findcord" target="_blank" rel="noopener noreferrer">discord.gg/findcord</a>
+    </p>
+
+    <div class="box box-warn">
+      <strong>Sunucuya özgü kayıtlar:</strong>
+      Sunucu yöneticileri tarafından bağımsız olarak tutulan kayıtlar, ilgili sunucunun
+      yapılandırmasına ve geçerli sorumluluklara tabi olabilir. Bir kaydın hangi tarafça
+      kontrol edildiği, silme taleplerinin değerlendirilmesinde dikkate alınır.
+    </div>
+
+    <h2 id="t7">7. Üçüncü taraflarla paylaşım</h2>
+
+    <ul>
+      <li>
+        Kullanıcı verileri satılmamalı, kiralanmamalı veya reklam amacıyla paylaşılmamalıdır.
+      </li>
+      <li>
+        Botun barındırılması için kullanılan altyapı sağlayıcıları, hizmetin sunulması kapsamında
+        gerekli verilere erişebilir. Bu erişim gerekli kapsamla sınırlandırılmalıdır.
+      </li>
+      <li>
+        Veriler, geçerli bir hukuki yükümlülük bulunduğunda yetkili mercilere açıklanabilir.
+      </li>
+      <li>
+        Discord'un kendi hizmetleri kapsamında gerçekleştirdiği veri işleme faaliyetleri,
+        Discord'un gizlilik politikası ve ilgili koşullarına tabidir.
+      </li>
+    </ul>
+
+    <h2 id="t8">8. Güvenlik</h2>
+
+    <ul>
+      <li>Verilere erişim yalnızca yetkili kişiler ve gerekli hizmet bileşenleriyle sınırlandırılmalıdır.</li>
+      <li>Veritabanı erişimleri ve kimlik doğrulama bilgileri uygun şekilde korunmalıdır.</li>
+      <li>Gereksiz veri tutulmasından kaçınılmalı ve belirlenen silme politikaları uygulanmalıdır.</li>
+      <li>Güvenlik olayları değerlendirilerek gerekli teknik ve idari önlemler alınmalıdır.</li>
+    </ul>
+
+    <p>
+      İnternet üzerinden yapılan hiçbir veri aktarımı veya elektronik depolama yöntemi için
+      mutlak güvenlik garantisi verilemez. Bununla birlikte uygun koruma önlemleri uygulanmalıdır.
+    </p>
+
+    <h2 id="t9">9. Yaş sınırı</h2>
+
+    <p>
+      FindCord, Discord'un yaş gerekliliklerine ve geçerli yerel mevzuata uygun kullanılmalıdır.
+      Discord'un asgari yaş koşulları geçerlidir. Kullanıcıların hizmeti kullanmaya uygun yaşta
+      olmaları gerekir.
+    </p>
+
+    <p>
+      Yaş koşullarının ihlal edildiği öğrenildiğinde, ilgili verilerin işlenmesi ve silinmesi
+      uygulanabilir kurallar ve geçerli mevzuat doğrultusunda değerlendirilir.
+    </p>
+
+    <h2 id="t10">10. Politika değişiklikleri</h2>
+
+    <p>
+      Bu politika, botun özellikleri veya geçerli hukuki gereklilikler değiştiğinde güncellenebilir.
+      Önemli değişiklikler uygun iletişim kanalları üzerinden duyurulur ve son güncelleme tarihi
+      yenilenir.
+    </p>
+
+    <h2 id="t11">11. İletişim</h2>
+
+    <ul>
+      <li>
+        <strong>Destek sunucusu:</strong>
+        <a href="https://discord.gg/findcord" target="_blank" rel="noopener noreferrer">discord.gg/findcord</a>
+      </li>
+      <li>
+        <strong>Gizlilik ve veri talepleri:</strong>
+        Destek sunucusu üzerinden iletilebilir.
+      </li>
+    </ul>
+
+  </main>
+
+  <hr class="split">
+
+  <!-- ============================== ENGLISH ============================== -->
+
+  <main class="card" id="en" lang="en">
+
+    <h1 style="font-size:24px">FindCord Discord Bot — Privacy Policy</h1>
+
+    <p class="meta">
+      Effective date: <strong>15 October 2026</strong>
+      · Last updated: 15 October 2026
+    </p>
+
+    <p class="meta">
+      Scope: the FindCord Discord bot and the features it provides on Discord servers.
+    </p>
+
+    <div class="box box-brand">
+      <strong>Summary.</strong>
+      FindCord processes data necessary to operate its enabled Discord bot features.
+      Data should be used only for the relevant features, server management and service security.
+      Any statements about message content, voice recordings and retention periods must accurately
+      reflect the bot's actual implementation. Users may submit requests concerning their data.
+    </div>
+
+    <h2>1. About the service</h2>
+
+    <p>
+      FindCord is a Discord bot that provides server management, member registration, moderation,
+      server security, invite tracking and related administrative features.
+    </p>
+
+    <p>
+      The bot operates within the permissions granted by Discord and the configuration enabled
+      on the relevant server.
+    </p>
+
+    <div class="box box-ok">
+      <strong>Feature activation.</strong>
+      Server administrators should enable configurable features according to their needs and
+      review the permissions granted to the bot. Enabling a feature does not authorize the
+      collection of unrelated data.
+    </div>
+
+    <h2>2. Data processed</h2>
+
+    <p>
+      Depending on the bot's configuration, enabled features and Discord permissions,
+      the following categories of data may be processed.
+    </p>
+
+    <h3>A. Basic user information</h3>
+
+    <ul>
+      <li>
+        <strong>Discord identity:</strong>
+        User ID, username, display name and server nickname where necessary.
+      </li>
+      <li>
+        <strong>Server membership and roles:</strong>
+        Membership and role information in servers where the bot operates, to the extent
+        necessary for the relevant feature.
+      </li>
+    </ul>
+
+    <h3>B. Server management data</h3>
+
+    <ul>
+      <li>
+        <strong>Server settings:</strong>
+        Roles, channels, security options and other configuration details selected by administrators.
+      </li>
+      <li>
+        <strong>Registration records:</strong>
+        Where registration is enabled, the name and age entered during registration, resulting
+        nickname, registration date and identity of the staff member who performed the action.
+      </li>
+      <li>
+        <strong>Moderation records:</strong>
+        The type, date, relevant user and stated reason for bans, kicks, mutes and timeouts
+        performed through the bot.
+      </li>
+      <li>
+        <strong>Security records:</strong>
+        Events required for enabled protection features, detected violations and resulting actions.
+      </li>
+      <li>
+        <strong>Invite tracking:</strong>
+        Where enabled, invite codes, the inviting member and join time where necessary.
+      </li>
+      <li>
+        <strong>Command usage information:</strong>
+        Command usage records needed to troubleshoot technical issues and assess the bot's operation.
+        Command arguments and message content should not be recorded unless genuinely necessary.
+      </li>
+    </ul>
+
+    <div class="box box-brand">
+      <strong>Data minimisation.</strong>
+      Data should be processed only to the extent necessary for the stated purposes.
+      Personal data that a feature does not need should not be collected or retained.
+    </div>
+
+    <h2>3. Data not processed</h2>
+
+    <p>
+      The following statements apply only where they have been verified against the bot's
+      actual configuration and implementation.
+    </p>
+
+    <div class="box box-no">
+      <ul style="margin:0 0 0 20px">
+        <li>
+          <strong>Discord account passwords:</strong>
+          Users are not asked to provide their Discord passwords.
+        </li>
+        <li>
+          <strong>Payment information:</strong>
+          Payment card or payment method details are not collected where they are not needed
+          for the bot's functionality.
+        </li>
+        <li>
+          <strong>Direct messages:</strong>
+          Whether direct message content is processed depends on the bot's actual functionality
+          and access. If no such feature exists, the policy may state that direct messages are
+          not collected.
+        </li>
+        <li>
+          <strong>Message content:</strong>
+          Whether message content is accessed or stored must be verified against the Discord
+          permissions and application code actually used.
+        </li>
+        <li>
+          <strong>Voice recordings:</strong>
+          If voice conversations are neither monitored nor recorded, this should be stated.
+          Voice channel presence events are not the same as audio recordings.
+        </li>
+      </ul>
+    </div>
+
+    <h2>4. How data is used</h2>
+
+    <p>Data should be used only for relevant and legitimate service purposes, including:</p>
+
+    <ul>
+      <li>Operating the member registration system.</li>
+      <li>Running moderation and security features enabled by server administrators.</li>
+      <li>Applying server settings and role configurations.</li>
+      <li>Providing optional server management features such as invite tracking.</li>
+      <li>Identifying technical errors and protecting service security.</li>
+      <li>Allowing relevant server staff to review moderation actions.</li>
+    </ul>
+
+    <p>
+      Data should not be used for unrelated advertising, user profiling or sale.
+      Any further processing purpose should be separately assessed with appropriate legal
+      grounds and user information where required.
+    </p>
+
+    <h2>5. Data retention and deletion</h2>
+
+    <p>
+      Data is retained only for as long as necessary to operate the relevant feature,
+      subject to applicable legal obligations. Retention periods should be defined for
+      each data category. Data that is no longer necessary should be securely deleted
+      or, where appropriate, de-identified.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Data category</th>
+          <th>Retention principle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Server configuration</td>
+          <td>For as long as necessary for the relevant feature.</td>
+        </tr>
+        <tr>
+          <td>Registration records</td>
+          <td>According to the applicable retention policy and legal obligations.</td>
+        </tr>
+        <tr>
+          <td>Moderation records</td>
+          <td>For as long as necessary for server administration and under the defined deletion policy.</td>
+        </tr>
+        <tr>
+          <td>Security and violation records</td>
+          <td>For as long as necessary for the relevant security purpose.</td>
+        </tr>
+        <tr>
+          <td>Invite and command usage records</td>
+          <td>For as long as necessary for the relevant feature.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="box box-warn">
+      <strong>Important:</strong>
+      Do not publish automatic deletion periods or absolute deletion guarantees that are not
+      implemented in practice. Actual database retention and deletion mechanisms must be
+      consistent with this policy.
+    </div>
+
+    <h2>6. User rights</h2>
+
+    <p>
+      Users may contact the support team to request information about their personal data,
+      correction of inaccurate data, or deletion where applicable.
+    </p>
+
+    <ul>
+      <li><strong>Access:</strong> Request information about personal data being processed.</li>
+      <li><strong>Correction:</strong> Request correction of inaccurate or incomplete personal data.</li>
+      <li><strong>Deletion:</strong> Request deletion where applicable.</li>
+      <li><strong>Objection and restriction:</strong> Object to processing or request restriction where provided by applicable data protection law.</li>
+    </ul>
+
+    <p>
+      Requests are assessed after reasonable verification of the requester's identity.
+      Deletion requests are handled subject to applicable legal retention obligations
+      and the rights of others.
+    </p>
+
+    <p>
+      Support server:
+      <a href="https://discord.gg/findcord" target="_blank" rel="noopener noreferrer">discord.gg/findcord</a>
+    </p>
+
+    <div class="box box-warn">
+      <strong>Server-specific records:</strong>
+      Records independently maintained by server administrators may be subject to the
+      server's configuration and applicable responsibilities. Control over each record
+      is considered when assessing deletion requests.
+    </div>
+
+    <h2>7. Sharing with third parties</h2>
+
+    <ul>
+      <li>User data should not be sold, rented or shared for advertising purposes.</li>
+      <li>
+        Hosting and infrastructure providers may access data as necessary to operate the service.
+        Such access should be limited to what is required.
+      </li>
+      <li>Data may be disclosed to competent authorities where there is a valid legal obligation.</li>
+      <li>
+        Data processing carried out by Discord as part of its own services is subject to
+        Discord's own Privacy Policy and applicable terms.
+      </li>
+    </ul>
+
+    <h2>8. Security</h2>
+
+    <ul>
+      <li>Access to data should be restricted to authorised people and necessary service components.</li>
+      <li>Database access and authentication credentials should be appropriately protected.</li>
+      <li>Unnecessary data retention should be avoided and defined deletion policies should be applied.</li>
+      <li>Security incidents should be assessed and appropriate technical and organisational measures taken.</li>
+    </ul>
+
+    <p>
+      No method of internet transmission or electronic storage can guarantee absolute security.
+      Appropriate safeguards should nevertheless be implemented.
+    </p>
+
+    <h2>9. Age requirements</h2>
+
+    <p>
+      FindCord must be used in accordance with Discord's age requirements and applicable local law.
+      Discord's minimum age requirements apply. Users must be old enough to use the service.
+    </p>
+
+    <p>
+      If a violation of applicable age requirements is discovered, further processing and deletion
+      of relevant data will be assessed in accordance with applicable rules and law.
+    </p>
+
+    <h2>10. Changes to this policy</h2>
+
+    <p>
+      This policy may be updated when the bot's features or applicable legal requirements change.
+      Significant changes will be communicated through appropriate channels, and the last updated
+      date will be revised.
+    </p>
+
+    <h2>11. Contact</h2>
+
+    <ul>
+      <li>
+        <strong>Support server:</strong>
+        <a href="https://discord.gg/findcord" target="_blank" rel="noopener noreferrer">discord.gg/findcord</a>
+      </li>
+      <li>
+        <strong>Privacy and data requests:</strong>
+        May be submitted through the support server.
+      </li>
+    </ul>
+
+  </main>
+
+  <footer>
+    FindCord ·
+    <a href="privacy.html">Gizlilik Politikası / Privacy Policy</a> ·
     <a href="terms.html">Kullanım Koşulları / Terms of Service</a>
-  </div>
-</header>
-
-<!-- ============================== TÜRKÇE ============================== -->
-<main class="card" id="tr">
-
-<div class="box box-brand">
-  <strong>Kısa özet.</strong> FindCord, Discord&rsquo;da <strong>herkese açık olarak görünen</strong> bilgileri
-  işler. <strong>Mesaj içeriklerini okumuyor ve saklamıyoruz.</strong> Botun sunucu yönetimi özellikleri
-  <strong>varsayılan olarak kapalıdır</strong>; yalnızca sunucu yöneticisinin açtığı sunucuda çalışır. Belirli
-  kayıtlar <strong>30–180 gün</strong> sonra veritabanı tarafından otomatik silinir. Verilerinizi gizleyebilir
-  veya tamamen silinmesini talep edebilirsiniz.
-</div>
-
-<nav class="toc">
-  <a href="#t1">1. Hizmetin tanımı</a>
-  <a href="#t2">2. Toplanan veriler</a>
-  <a href="#t3">3. Toplamadığımız veriler</a>
-  <a href="#t4">4. Verilerin kullanım amaçları</a>
-  <a href="#t5">5. Saklama süreleri</a>
-  <a href="#t6">6. Haklarınız ve kontrol</a>
-  <a href="#t7">7. Üçüncü taraflarla paylaşım</a>
-  <a href="#t8">8. Güvenlik</a>
-  <a href="#t9">9. Yaş sınırı</a>
-  <a href="#t10">10. Değişiklikler</a>
-  <a href="#t11">11. İletişim</a>
-</nav>
-
-<h2 id="t1">1. Hizmetin tanımı</h2>
-<p>FindCord iki parçadan oluşur:</p>
-<ul>
-  <li><strong>FindCord botu</strong> — Discord sunucularında çalışan bir sunucu yönetim botudur: üye kaydı,
-      otomatik moderasyon (raid koruması, hesap yaşı kapısı, ceza kaçağı engelleme, takma ad politikası,
-      özel durum denetimi), durum rolü, yetkili nöbeti, davet takibi ve kullanıcı sorgulama komutları.
-      Botun tüm komutları eğik çizgi (<code>/</code>) komutudur.</li>
-  <li><strong>findcord.com ve FindCord API</strong> — Discord kullanıcı kimliği ile herkese açık profil ve
-      istatistik bilgilerinin görüntülenebildiği web arayüzü ve API.</li>
-</ul>
-<div class="box box-ok">
-  <strong>Opt-in ilkesi.</strong> Botun sunucu yönetimi özellikleri yüklendiği anda <strong>kapalıdır</strong>.
-  Her özellik, sunucu yöneticisi tarafından <code>/koruma</code> panelinden ayrı ayrı açılır. Açılmayan bir
-  özellik için hiçbir veri üretilmez veya saklanmaz.
-</div>
-
-<h2 id="t2">2. Toplanan veriler</h2>
-<p>Veriler iki grupta toplanır: <strong>(A)</strong> sorgulama hizmetini besleyen profil ve istatistik
-verileri, <strong>(B)</strong> yalnızca ilgili özellik açıkken üretilen sunucu yönetimi verileri.</p>
-
-<h3>A. Profil ve istatistik verileri</h3>
-<ul>
-  <li><strong>Kimlik bilgileri</strong> — kullanıcı kimliği (ID), kullanıcı adı, görünen ad, avatar, banner,
-      profil dekorasyonu, rozetler ve profilde herkese açık görünen biyografi ile hitap (pronouns) bilgisi.</li>
-  <li><strong>İsim ve takma ad geçmişi</strong> — zaman içinde kullanılan kullanıcı adları ve sunuculardaki
-      takma adlar.</li>
-  <li><strong>Sunucu üyelikleri ve roller</strong> — FindCord&rsquo;un bulunduğu sunuculardaki üyelik bilgisi ve
-      rol değişikliği geçmişi.</li>
-  <li><strong>Ses kanalı etkinliği</strong> — hangi ses kanalında bulunulduğu, kanalda geçirilen süre ve
-      birlikte vakit geçirilen kullanıcılar.</li>
-  <li><strong>Mesaj istatistikleri (içerik hariç)</strong> — mesaj sayısı, toplam karakter sayısı, emoji,
-      tepki, etiket ve dosya eki sayaçları ile son mesaj zamanı.
-      <span class="pill pill-no">Mesaj metinleri saklanmaz</span></li>
-  <li><strong>Durum ve özel durum</strong> — çevrimiçi / boşta / rahatsız etmeyin / çevrimdışı durumu,
-      kullanılan cihaz türü (bilgisayar, telefon, tarayıcı) ve özel durum (custom status) metni.</li>
-  <li><strong>Oyun ve müzik etkinliği</strong> — Discord&rsquo;un herkese açık yayınladığı oynanan oyun ve
-      dinlenen parça bilgileri ile süreleri.</li>
-  <li><strong>Moderasyon geçmişi (sicil)</strong> — botun bulunduğu sunuculardaki yasaklama, atma, susturma
-      ve zaman aşımı kayıtları; işlemi yapan yetkili ve belirtilen sebep.</li>
-  <li><strong>Yetkili geçmişi</strong> — sunucularda sahip olunan yetkili rolleri ve tarihleri.</li>
-  <li><strong>Görüntüleme ve sorgu kayıtları</strong> — bir profilin kim tarafından kaç kez görüntülendiği ve
-      kullanıcı başına sorgu sayaçları.</li>
-</ul>
-
-<h3>B. Sunucu yönetimi verileri <span class="pill pill-brand">yalnızca özellik açıksa</span></h3>
-<ul>
-  <li><strong>Sunucu ayarları</strong> — yöneticinin seçtiği roller, kanallar, eşikler ve yasaklı kelime
-      listeleri. Ayarlar sunucuya aittir.</li>
-  <li><strong>Kayıt bilgileri</strong> — kayıt sisteminde girilen isim ve yaş, oluşturulan takma ad ve kaydı
-      yapan yetkili. Yalnızca kaydın yapıldığı sunucuya aittir; farklı sunucuların kayıtları birbiriyle
-      veya genel profille <strong>birleştirilmez</strong>.</li>
-  <li><strong>Özel durum ihlal kayıtları</strong> — yalnızca sunucunun politikasını ihlal eden özel durum
-      metni (davet bağlantısı, reklam, yasaklı kelime), tespit türü, uygulanan işlem ve zamanı. Bu kayıt
-      yetkilinin &ldquo;bu işlem neden yapıldı?&rdquo; sorusunu cevaplayabilmesi için tutulur.
-      <span class="pill pill-ok">Temiz özel durumlar saklanmaz</span></li>
-  <li><strong>Ceza durumu</strong> — sunucunun izlediği ceza rollerinden hangilerinin üyede bulunduğu.
-      Ceza kaçağını (çıkıp tekrar girerek cezadan kurtulma) engellemek için tutulur.</li>
-  <li><strong>Davet atfı</strong> — yeni katılan üyenin hangi davet kodu ve kimin daveti ile geldiği,
-      katılım zamanı ve sunucuda kalıp kalmadığı.</li>
-  <li><strong>Komut kullanım sayaçları</strong> — hangi sunucuda hangi komutun kaç kez kullanıldığı.
-      Komut argümanları ve mesaj içeriği <strong>kaydedilmez</strong>.</li>
-</ul>
-
-<div class="box box-brand">
-  <strong>Kaynak.</strong> Yukarıdaki verilerin tamamı Discord&rsquo;da herkese açık olarak görünen
-  bilgilerden oluşur ve yalnızca FindCord&rsquo;un bulunduğu sunucular kapsamında işlenir.
-</div>
-
-<h2 id="t3">3. Toplamadığımız veriler</h2>
-<p>Aşağıdakileri <strong>hiçbir koşulda</strong> toplamıyor, okumuyor ve saklamıyoruz:</p>
-<div class="box box-no">
-<ul style="margin:0 0 0 20px">
-  <li><strong>Mesaj içerikleri.</strong> Sunucu kanallarında yazılan mesaj metinleri kaydedilmez. Botun tüm
-      komutları eğik çizgi komutudur ve Discord&rsquo;un <em>Message Content</em> iznini kullanmıyoruz.</li>
-  <li><strong>Özel mesajlar (DM).</strong> Kullanıcılar arasındaki özel mesajlara erişimimiz yoktur.</li>
-  <li><strong>Kapalı kanal içerikleri.</strong> Botun erişimi olmayan kanalların içeriği işlenmez.</li>
-  <li><strong>Hesap kimlik bilgileri.</strong> Discord şifresi, e-posta adresi, telefon numarası veya iki
-      adımlı doğrulama bilgisi istenmez ve saklanmaz.</li>
-  <li><strong>Ödeme bilgileri.</strong> Kart veya ödeme yöntemi bilgisi sistemimizde tutulmaz.</li>
-  <li><strong>Sesli konuşma kayıtları.</strong> Ses kanallarındaki konuşmalar dinlenmez, kaydedilmez;
-      yalnızca kanalda bulunma bilgisi tutulur.</li>
-</ul>
-</div>
-
-<h2 id="t4">4. Verilerin kullanım amaçları</h2>
-<ul>
-  <li><strong>Sorgulama hizmeti</strong> — profillerin ve istatistiklerin web sitesi, API ve bot komutları
-      üzerinden görüntülenebilmesi.</li>
-  <li><strong>Sunucu yönetimi</strong> — kayıt sistemi, raid koruması, hesap yaşı kapısı, ceza kaçağı
-      engelleme, takma ad politikası, özel durum denetimi, durum rolü, yetkili nöbeti ve davet takibinin
-      çalışması.</li>
-  <li><strong>Denetlenebilirlik</strong> — otomatik uygulanan bir işlemin gerekçesinin sunucu yetkilileri
-      tarafından sonradan incelenebilmesi.</li>
-  <li><strong>Hizmet güvenliği ve iyileştirme</strong> — hata ayıklama, performans takibi ve kötüye
-      kullanımın (spam, otomasyon, kurallara aykırı erişim) tespiti.</li>
-</ul>
-<p>Veriler <strong>pazarlama amacıyla kullanılmaz</strong>, profil çıkarımı yapılarak reklam
-hedeflemesinde kullanılmaz ve <strong>satılmaz</strong>.</p>
-
-<h2 id="t5">5. Saklama süreleri</h2>
-<p>Aşağıdaki kayıtlar süresi dolduğunda veritabanı tarafından <strong>otomatik olarak</strong> silinir;
-ayrıca bir talep gerekmez.</p>
-<table>
-  <thead><tr><th>Veri</th><th>Süre</th><th>Not</th></tr></thead>
-  <tbody>
-    <tr><td>Özel durum ihlal kayıtları</td><td><span class="pill pill-brand">30 gün</span></td><td>Süre sonunda otomatik silinir.</td></tr>
-    <tr><td>Ceza durumu kayıtları</td><td><span class="pill pill-brand">30 gün</span></td><td>Ceza kaçağı penceresi kapanınca silinir.</td></tr>
-    <tr><td>Komut kullanım sayaçları</td><td><span class="pill pill-brand">30 gün</span></td><td>Yalnızca sunucu ve komut adı; içerik yok.</td></tr>
-    <tr><td>Günlük durum istatistikleri</td><td><span class="pill pill-brand">90 gün</span></td><td>Saatlik çevrimiçi dağılımı.</td></tr>
-    <tr><td>Sorgu sayaçları</td><td><span class="pill pill-brand">90 gün</span></td><td>Hareketsizlik sonrası silinir.</td></tr>
-    <tr><td>Davet atfı kayıtları</td><td><span class="pill pill-brand">180 gün</span></td><td>Davet sayımının hesaplandığı pencere.</td></tr>
-    <tr><td>Profil görüntüleme kayıtları</td><td><span class="pill pill-brand">180 gün</span></td><td>Kimin görüntülediği bilgisi.</td></tr>
-    <tr><td>Profil, istatistik ve sicil verileri</td><td><span class="pill pill-brand">Talebe kadar</span></td><td>Silme talebi gelene kadar saklanır (bkz. bölüm 6).</td></tr>
-    <tr><td>Anlık durum, cihaz, yetkili nöbet listesi</td><td><span class="pill pill-ok">Saklanmaz</span></td><td>Yalnızca bellekte işlenir; bot yeniden başladığında kaybolur.</td></tr>
-  </tbody>
-</table>
-
-<h2 id="t6">6. Haklarınız ve kontrol</h2>
-<h3>6.1 Kendi kontrolünüzdeki ayarlar</h3>
-<p>Discord hesabınızla <a href="https://findcord.com/settings">findcord.com/settings</a> sayfasına giriş
-yaparak şunları yapabilirsiniz:</p>
-<ul>
-  <li><strong>Profili gizleme</strong> — profilinizin başkaları tarafından sorgulanmasını engeller.</li>
-  <li><strong>Sunucuları gizleme</strong> — ortak sunucu listenizin görüntülenmesini kapatır.</li>
-  <li><strong>İstatistikleri gizleme</strong> — ses ve mesaj istatistiklerinizin herkese açık gösterilmesini engeller.</li>
-</ul>
-<p>Bu ayarları açtığınızda profiliniz hem web sitesinde hem de API üzerinden sorgulanamaz hale gelir.</p>
-
-<h3>6.2 Bilgi alma, düzeltme ve silme</h3>
-<ul>
-  <li><strong>Bilgi alma</strong> — hakkınızda hangi verilerin tutulduğunu öğrenebilirsiniz.</li>
-  <li><strong>Silme</strong> — tüm verilerinizin kalıcı olarak silinmesini talep edebilirsiniz.</li>
-  <li><strong>Düzeltme</strong> — hatalı olduğunu düşündüğünüz bir kaydın düzeltilmesini isteyebilirsiniz.</li>
-</ul>
-<p>Talebinizi <a href="https://discord.gg/findcord">discord.gg/findcord</a> adresindeki destek sunucumuz
-üzerinden iletebilirsiniz. Talep alındıktan sonra Discord hesabınız üzerinden kimliğiniz doğrulanır ve
-işlem genellikle <strong>1–2 iş günü</strong> içinde tamamlanır.</p>
-<div class="box box-warn">
-  <strong>Önemli:</strong> Silinen veriler geri getirilemez. Sunucu yöneticilerinin kendi sunucularında
-  tuttukları moderasyon kayıtları o sunucunun yöneticisinin sorumluluğundadır.
-</div>
-
-<h2 id="t7">7. Üçüncü taraflarla paylaşım</h2>
-<ul>
-  <li>Veriler üçüncü taraflara <strong>satılmaz, kiralanmaz</strong> ve pazarlama amacıyla paylaşılmaz.</li>
-  <li>FindCord API&rsquo;sini kullanan geliştiriciler, yalnızca bir kullanıcının <strong>herkese açık</strong>
-      profil ve istatistik bilgilerini, kendilerine verilen API anahtarıyla ve hız sınırları dahilinde
-      sorgulayabilir. Gizlilik ayarını açan kullanıcıların verileri API üzerinden <strong>döndürülmez</strong>.</li>
-  <li>Veriler yalnızca yasal bir zorunluluk hâlinde yetkili mercilere iletilebilir.</li>
-  <li>Hizmetin çalışması için kullanılan altyapı sağlayıcıları (sunucu barındırma, içerik dağıtım ağı)
-      verilere erişmek için değil, hizmeti barındırmak için kullanılır.</li>
-</ul>
-
-<h2 id="t8">8. Güvenlik</h2>
-<ul>
-  <li>Veriler erişimi kısıtlı sunucularda saklanır; veri aktarımı güncel şifreleme protokolleriyle korunur.</li>
-  <li>API erişimi anahtar doğrulaması ve hız sınırlarıyla korunur; anahtarlar veritabanında şifrelenmiş
-      özet (hash) olarak tutulur.</li>
-  <li><strong>Veri en azı ilkesi</strong> — bir özelliğin ihtiyaç duymadığı veri toplanmaz, süresi dolan
-      kayıtlar otomatik silinir.</li>
-</ul>
-<p>Tüm bu önlemlere rağmen internet üzerinden yapılan hiçbir aktarımın veya elektronik depolamanın
-%100 güvenli olmadığını belirtmek isteriz; koşulsuz bir güvenlik garantisi verilemez.</p>
-
-<h2 id="t9">9. Yaş sınırı</h2>
-<p>FindCord, Discord&rsquo;un hizmet şartlarına tabidir ve Discord&rsquo;u kullanmaya uygun yaşta olan
-kişilere yöneliktir. 13 yaşından küçük olduğunu öğrendiğimiz bir kullanıcının verilerini sileriz.
-Kayıt sistemini kullanan sunucularda en küçük yaş eşiği varsayılan olarak <strong>13</strong>&rsquo;tür.</p>
-
-<h2 id="t10">10. Politika değişiklikleri</h2>
-<p>Bu politika zaman zaman güncellenebilir. Önemli değişiklikler destek sunucumuzda duyurulur ve
-sayfanın üstündeki <em>Son güncelleme</em> tarihi yenilenir. Hizmeti kullanmaya devam etmek, güncellenmiş
-politikayı kabul ettiğiniz anlamına gelir.</p>
-
-<h2 id="t11">11. İletişim</h2>
-<ul>
-  <li><strong>Destek sunucusu:</strong> <a href="https://discord.gg/findcord">discord.gg/findcord</a></li>
-  <li><strong>Veri silme ve gizlilik talepleri:</strong> aynı destek sunucusu üzerinden</li>
-  <li><strong>Web sitesi:</strong> <a href="https://findcord.com">findcord.com</a></li>
-  <li><strong>Yanıt süresi:</strong> genellikle 1–2 iş günü</li>
-</ul>
-
-</main>
-
-<hr class="split">
-
-<!-- ============================== ENGLISH ============================== -->
-<main class="card" id="en" lang="en">
-
-<h1 style="font-size:24px">FindCord — Privacy Policy (English)</h1>
-<p class="meta">Effective date: <strong>4 October 2026</strong> · Last updated: 4 October 2026</p>
-<p class="meta">Scope: the FindCord Discord bot, findcord.com and the FindCord API.
-This English text is a translation of the Turkish version above; both have the same meaning.</p>
-
-<div class="box box-brand">
-  <strong>Summary.</strong> FindCord processes information that is <strong>publicly visible on Discord</strong>.
-  <strong>We do not read or store message content.</strong> The bot&rsquo;s server-management features are
-  <strong>disabled by default</strong> and only run in servers where an administrator has enabled them.
-  Time-limited records are deleted automatically after <strong>30–180 days</strong>. Users can hide their
-  data or request full deletion.
-</div>
-
-<h2>1. What the service is</h2>
-<ul>
-  <li><strong>The FindCord bot</strong> — a server management bot for Discord: member registration,
-      automated moderation (anti-raid, account-age gate, punishment-evasion protection, nickname policy,
-      custom-status moderation), status roles, staff availability, invite attribution and user lookup
-      commands. All of the bot&rsquo;s commands are slash commands.</li>
-  <li><strong>findcord.com and the FindCord API</strong> — a web interface and API where publicly visible
-      profile and statistics information can be looked up by Discord user ID.</li>
-</ul>
-<div class="box box-ok">
-  <strong>Opt-in by design.</strong> The bot&rsquo;s server-management features are <strong>off</strong> when it
-  joins a server. Each feature is enabled individually by a server administrator through the
-  <code>/koruma</code> settings panel. No data is produced or stored for a feature that has not been enabled.
-</div>
-
-<h2>2. Data we collect</h2>
-<h3>A. Profile and statistics data</h3>
-<ul>
-  <li><strong>Identity</strong> — user ID, username, display name, avatar, banner, profile decoration,
-      badges, and the publicly visible profile bio and pronouns.</li>
-  <li><strong>Username and nickname history</strong> — names used over time and server nicknames.</li>
-  <li><strong>Server memberships and roles</strong> — membership in servers where FindCord is present and
-      role change history.</li>
-  <li><strong>Voice activity</strong> — which voice channel a member is in, time spent in voice, and
-      members they spend time with.</li>
-  <li><strong>Message statistics (no content)</strong> — message counts, total character count, emoji,
-      reaction, mention and attachment counters, and the time of the last message.
-      <span class="pill pill-no">Message text is not stored</span></li>
-  <li><strong>Status and custom status</strong> — online / idle / do-not-disturb / offline state, device
-      type (desktop, mobile, web) and custom status text.</li>
-  <li><strong>Game and music activity</strong> — the game and track information Discord publishes publicly,
-      with durations.</li>
-  <li><strong>Moderation history</strong> — bans, kicks, mutes and timeouts in servers where the bot is
-      present, including the acting moderator and the stated reason.</li>
-  <li><strong>Staff history</strong> — staff roles held in servers and their dates.</li>
-  <li><strong>View and lookup records</strong> — who viewed a profile and how many times, plus per-user
-      lookup counters.</li>
-</ul>
-
-<h3>B. Server-management data <span class="pill pill-brand">only when the feature is enabled</span></h3>
-<ul>
-  <li><strong>Server settings</strong> — roles, channels, thresholds and banned-term lists chosen by the
-      administrator. Settings belong to the server.</li>
-  <li><strong>Registration records</strong> — the name and age entered during registration, the resulting
-      nickname and the staff member who performed it. Scoped to the server where it was created; never
-      merged across servers or into a general user profile.</li>
-  <li><strong>Custom-status violation records</strong> — only the custom status text that violates the
-      server&rsquo;s policy (invite link, advertising, banned term), the detection type, the action applied
-      and the time. Retained so moderators can review why an action was taken.
-      <span class="pill pill-ok">Clean custom statuses are never stored</span></li>
-  <li><strong>Punishment state</strong> — which of the server&rsquo;s tracked punishment roles a member holds,
-      kept to prevent punishment evasion by leaving and rejoining.</li>
-  <li><strong>Invite attribution</strong> — which invite code and inviter a new member joined through,
-      the join time and whether they remained in the server.</li>
-  <li><strong>Command usage counters</strong> — which command was used how many times in which server.
-      Command arguments and message content are <strong>not</strong> recorded.</li>
-</ul>
-
-<h2>3. Data we do not collect</h2>
-<div class="box box-no">
-<ul style="margin:0 0 0 20px">
-  <li><strong>Message content.</strong> Message text written in server channels is not stored. All bot
-      commands are slash commands and we do not use Discord&rsquo;s <em>Message Content</em> intent.</li>
-  <li><strong>Direct messages.</strong> We have no access to private messages between users.</li>
-  <li><strong>Content of channels the bot cannot access.</strong></li>
-  <li><strong>Account credentials.</strong> Discord passwords, e-mail addresses, phone numbers and
-      two-factor details are never requested or stored.</li>
-  <li><strong>Payment information.</strong></li>
-  <li><strong>Voice recordings.</strong> Conversations in voice channels are never listened to or recorded;
-      only presence in the channel is recorded.</li>
-</ul>
-</div>
-
-<h2>4. How we use data</h2>
-<ul>
-  <li><strong>Lookup service</strong> — displaying profiles and statistics through the website, the API and
-      bot commands.</li>
-  <li><strong>Server management</strong> — operating registration, anti-raid, the account-age gate,
-      punishment-evasion protection, nickname policy, custom-status moderation, status roles, staff
-      availability and invite attribution.</li>
-  <li><strong>Accountability</strong> — allowing server staff to review afterwards why an automated action
-      was taken.</li>
-  <li><strong>Security and improvement</strong> — debugging, performance monitoring and detecting abuse
-      (spam, automation, access that breaches our terms).</li>
-</ul>
-<p>Data is <strong>not</strong> used for marketing or ad targeting and is <strong>never sold</strong>.</p>
-
-<h2>5. Retention periods</h2>
-<p>The following records are deleted <strong>automatically</strong> by the database when their period
-expires; no request is needed.</p>
-<table>
-  <thead><tr><th>Data</th><th>Period</th><th>Note</th></tr></thead>
-  <tbody>
-    <tr><td>Custom-status violation records</td><td><span class="pill pill-brand">30 days</span></td><td>Deleted automatically.</td></tr>
-    <tr><td>Punishment state records</td><td><span class="pill pill-brand">30 days</span></td><td>Deleted when the evasion window closes.</td></tr>
-    <tr><td>Command usage counters</td><td><span class="pill pill-brand">30 days</span></td><td>Server and command name only; no content.</td></tr>
-    <tr><td>Daily presence statistics</td><td><span class="pill pill-brand">90 days</span></td><td>Hourly online distribution.</td></tr>
-    <tr><td>Lookup counters</td><td><span class="pill pill-brand">90 days</span></td><td>Deleted after inactivity.</td></tr>
-    <tr><td>Invite attribution records</td><td><span class="pill pill-brand">180 days</span></td><td>Window used to calculate invite counts.</td></tr>
-    <tr><td>Profile view records</td><td><span class="pill pill-brand">180 days</span></td><td>Who viewed a profile.</td></tr>
-    <tr><td>Profile, statistics and moderation history</td><td><span class="pill pill-brand">Until requested</span></td><td>Kept until a deletion request (see section 6).</td></tr>
-    <tr><td>Live status, device, staff availability list</td><td><span class="pill pill-ok">Not stored</span></td><td>Processed in memory only; lost when the bot restarts.</td></tr>
-  </tbody>
-</table>
-
-<h2>6. Your rights and controls</h2>
-<p>Signing in at <a href="https://findcord.com/settings">findcord.com/settings</a> with your Discord
-account lets you <strong>hide your profile</strong>, <strong>hide your servers</strong> and
-<strong>hide your statistics</strong>. When enabled, your profile can no longer be looked up through the
-website or the API.</p>
-<p>You may also request <strong>information about</strong>, <strong>correction of</strong> or
-<strong>deletion of</strong> your data through our support server at
-<a href="https://discord.gg/findcord">discord.gg/findcord</a>. Identity is verified through your Discord
-account and requests are usually completed within <strong>1–2 business days</strong>. Deleted data cannot
-be recovered.</p>
-
-<h2>7. Sharing with third parties</h2>
-<ul>
-  <li>Data is <strong>never sold or rented</strong> and is not shared for marketing purposes.</li>
-  <li>Developers using the FindCord API may look up only a user&rsquo;s <strong>publicly visible</strong>
-      profile and statistics, with an issued API key and within rate limits. Data of users who enabled a
-      privacy setting is <strong>not returned</strong> by the API.</li>
-  <li>Data may be disclosed to authorities only where legally required.</li>
-  <li>Infrastructure providers (hosting, CDN) are used to host the service, not to access data.</li>
-</ul>
-
-<h2>8. Security</h2>
-<ul>
-  <li>Data is stored on access-restricted servers; transfers are protected with current encryption protocols.</li>
-  <li>API access is protected by key validation and rate limits; keys are stored as hashes.</li>
-  <li><strong>Data minimisation</strong> — nothing is collected that a feature does not need, and expiring
-      records are deleted automatically.</li>
-</ul>
-<p>No transmission over the internet or electronic storage is 100% secure, so an unconditional security
-guarantee cannot be given.</p>
-
-<h2>9. Age</h2>
-<p>FindCord is subject to Discord&rsquo;s Terms of Service and is intended for people old enough to use
-Discord. If we learn that a user is under 13, their data is deleted. In servers using the registration
-system the default minimum age is <strong>13</strong>.</p>
-
-<h2>10. Changes to this policy</h2>
-<p>This policy may be updated from time to time. Significant changes are announced in our support server
-and the <em>Last updated</em> date at the top is revised. Continuing to use the service means accepting
-the updated policy.</p>
-
-<h2>11. Contact</h2>
-<ul>
-  <li><strong>Support server:</strong> <a href="https://discord.gg/findcord">discord.gg/findcord</a></li>
-  <li><strong>Data deletion and privacy requests:</strong> through the same support server</li>
-  <li><strong>Website:</strong> <a href="https://findcord.com">findcord.com</a></li>
-  <li><strong>Response time:</strong> usually 1–2 business days</li>
-</ul>
-
-</main>
-
-<footer>
-  FindCord · <a href="privacy.html">Gizlilik Politikası / Privacy Policy</a> ·
-  <a href="terms.html">Kullanım Koşulları / Terms of Service</a> ·
-  <a href="https://findcord.com">findcord.com</a>
-</footer>
+  </footer>
 
 </div>
 </body>
