@@ -1,419 +1,710 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kullanım Koşulları — FindCord</title>
-<meta name="description" content="FindCord Discord botu, web sitesi ve API kullanım koşulları. / FindCord terms of service (Turkish and English).">
-<style>
-  :root{
-    --bg:#f5f6f8; --card:#ffffff; --ink:#1f2430; --muted:#5b6474; --line:#e4e7ec;
-    --brand:#2f6fed; --brand-soft:#eef3ff; --ok:#0f7b4f; --ok-soft:#e8f6ef;
-    --warn:#8a5300; --warn-soft:#fdf3e3; --no:#b42318; --no-soft:#fdeceb;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0; padding:32px 16px 72px;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg); color:var(--ink); line-height:1.65; font-size:16px;
-  }
-  .wrap{max-width:860px; margin:0 auto}
-  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px 30px; margin-bottom:20px}
-  header.card{border-top:4px solid var(--brand)}
-  h1{margin:0 0 6px; font-size:28px; letter-spacing:-.3px}
-  h2{margin:34px 0 10px; font-size:20px; letter-spacing:-.2px; padding-bottom:6px; border-bottom:1px solid var(--line)}
-  h3{margin:22px 0 8px; font-size:16px}
-  p{margin:10px 0}
-  ul{margin:10px 0 10px 20px; padding:0}
-  li{margin:6px 0}
-  .meta{color:var(--muted); font-size:14px; margin:0}
-  .pill{display:inline-block; padding:3px 10px; border-radius:999px; font-size:12.5px; font-weight:600; white-space:nowrap}
-  .pill-brand{background:var(--brand-soft); color:var(--brand)}
-  .pill-ok{background:var(--ok-soft); color:var(--ok)}
-  .pill-no{background:var(--no-soft); color:var(--no)}
-  .langbar{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
-  .langbar a{display:inline-block; padding:7px 14px; border:1px solid var(--line); border-radius:8px;
-    text-decoration:none; color:var(--ink); font-size:14px; font-weight:600; background:#fafbfc}
-  .langbar a:hover{border-color:var(--brand); color:var(--brand)}
-  .box{border-radius:10px; padding:14px 16px; margin:16px 0; font-size:15px}
-  .box-brand{background:var(--brand-soft); border:1px solid #d4e1ff}
-  .box-ok{background:var(--ok-soft); border:1px solid #cfe9dd}
-  .box-no{background:var(--no-soft); border:1px solid #f6d6d3}
-  .box-warn{background:var(--warn-soft); border:1px solid #f0e0c0}
-  table{width:100%; border-collapse:collapse; margin:14px 0; font-size:14.5px}
-  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top}
-  th{background:#fafbfc; font-size:13.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted)}
-  tr:last-child td{border-bottom:none}
-  code{background:#f1f3f6; padding:1.5px 6px; border-radius:5px; font-size:14px;
-    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-  a{color:var(--brand)}
-  .toc{columns:2; column-gap:26px; font-size:14.5px; margin:8px 0 0}
-  .toc a{display:block; padding:3px 0; text-decoration:none}
-  .toc a:hover{text-decoration:underline}
-  footer{color:var(--muted); font-size:13.5px; text-align:center; margin-top:8px}
-  hr.split{border:none; border-top:3px double var(--line); margin:40px 0 0}
-  @media (max-width:620px){ .toc{columns:1} .card{padding:22px 18px} body{padding:18px 12px 56px} }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discord sunucu yönetim botunun gizlilik politikası, veri işleme, saklama ve silme koşulları.">
+    <title>Gizlilik Politikası | Sunucu Yönetim Botu</title>
+
+    <style>
+        :root {
+            color-scheme: dark;
+            --background: #23272A;
+            --surface: #2F3136;
+            --surface-light: #36393F;
+            --border: #40444B;
+            --text: #F2F3F5;
+            --muted: #B9BBBE;
+            --accent: #5865F2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: var(--background);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 36px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        h1, h2, h3 {
+            color: #FFFFFF;
+            line-height: 1.4;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 30px;
+        }
+
+        h2 {
+            margin-top: 36px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            font-size: 22px;
+        }
+
+        h3 {
+            margin-top: 24px;
+            font-size: 17px;
+        }
+
+        p, li {
+            color: var(--muted);
+        }
+
+        a {
+            color: #8EA1FF;
+            overflow-wrap: anywhere;
+        }
+
+        ul {
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .meta {
+            margin-bottom: 28px;
+            padding: 14px 18px;
+            background: var(--surface-light);
+            border-radius: 8px;
+        }
+
+        .meta p {
+            margin: 4px 0;
+        }
+
+        .notice {
+            margin: 20px 0;
+            padding: 16px 18px;
+            background: rgba(88, 101, 242, 0.10);
+            border-left: 4px solid var(--accent);
+            border-radius: 6px;
+        }
+
+        .notice p {
+            margin: 0;
+        }
+
+        .language {
+            margin-top: 48px;
+            padding-top: 28px;
+            border-top: 2px solid var(--border);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 16px 10px;
+            }
+
+            .container {
+                padding: 22px 17px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<div class="wrap">
+<main class="container">
 
-<header class="card">
-  <h1>FindCord — Kullanım Koşulları</h1>
-  <p class="meta">Yürürlük tarihi: <strong>4 Ekim 2026</strong> &nbsp;·&nbsp; Son güncelleme: 4 Ekim 2026</p>
-  <p class="meta">Kapsam: FindCord Discord botu (<code>FindCord#6066</code>), findcord.com web sitesi ve FindCord API</p>
-  <div class="langbar">
-    <a href="#tr">Türkçe</a>
-    <a href="#en">English version ↓</a>
-    <a href="privacy.html">Gizlilik Politikası / Privacy Policy</a>
-  </div>
-</header>
+    <h1>Gizlilik Politikası</h1>
 
-<!-- ============================== TÜRKÇE ============================== -->
-<main class="card" id="tr">
+    <div class="meta">
+        <p><strong>Uygulama:</strong> Discord Sunucu Yönetim Botu</p>
+        <p><strong>Yürürlük tarihi:</strong> [GG.AA.YYYY]</p>
+        <p><strong>Son güncelleme:</strong> [GG.AA.YYYY]</p>
+        <p><strong>İletişim:</strong>
+            <a href="https://discord.gg/findcord" target="_blank" rel="noopener noreferrer">
+                Destek Discord Sunucusu
+            </a>
+        </p>
+    </div>
 
-<div class="box box-brand">
-  <strong>Kısa özet.</strong> FindCord bir sunucu yönetim ve sorgulama hizmetidir. Botu sunucunuza ekleyerek
-  veya web sitesini/API&rsquo;yi kullanarak bu koşulları kabul etmiş olursunuz. Botun yönetim özellikleri
-  <strong>varsayılan olarak kapalıdır</strong>; hangi özelliğin açılacağına <strong>sunucu yöneticisi</strong>
-  karar verir ve bu kararın sonuçlarından o sorumludur. Hizmet Discord&rsquo;un kurallarına tabidir ve
-  Discord ile resmî bir bağı yoktur.
-</div>
+    <p>
+        Bu Gizlilik Politikası, Discord sunucularının yönetimini, moderasyonunu
+        ve güvenliğini desteklemek amacıyla kullanılan sunucu yönetim botunun
+        hangi verileri işleyebileceğini, bu verilerin hangi amaçlarla
+        kullanılacağını, nasıl saklanacağını ve kullanıcıların verileriyle
+        ilgili taleplerini nasıl iletebileceğini açıklar.
+    </p>
 
-<nav class="toc">
-  <a href="#t1">1. Taraflar ve kabul</a>
-  <a href="#t2">2. Hizmetin tanımı</a>
-  <a href="#t3">3. Uygunluk ve yaş</a>
-  <a href="#t4">4. Botun izinleri</a>
-  <a href="#t5">5. Sunucu yöneticisinin sorumluluğu</a>
-  <a href="#t6">6. Kabul edilebilir kullanım</a>
-  <a href="#t7">7. API kullanım koşulları</a>
-  <a href="#t8">8. Hizmetin sürekliliği</a>
-  <a href="#t9">9. Sorumluluğun sınırı</a>
-  <a href="#t10">10. Erişimin askıya alınması</a>
-  <a href="#t11">11. Veri ve gizlilik</a>
-  <a href="#t12">12. Fikri mülkiyet</a>
-  <a href="#t13">13. Discord ile ilişki</a>
-  <a href="#t14">14. Koşullardaki değişiklikler</a>
-  <a href="#t15">15. İletişim</a>
-</nav>
+    <p>
+        Botu kullanan sunucu yöneticileri ve üyeler, botun sunucuda etkinleştirilen
+        özelliklerini ve gerekli izinlerini dikkate almalıdır. Botun veri erişimi,
+        Discord tarafından sağlanan izinler, erişim kapsamları ve etkinleştirilen
+        özelliklerle sınırlıdır.
+    </p>
 
-<h2 id="t1">1. Taraflar ve kabul</h2>
-<p>Bu koşullar, FindCord hizmetini sunan FindCord ekibi ile hizmeti kullanan kişi ve sunucular arasındaki
-ilişkiyi düzenler. Aşağıdakilerden herhangi birini yaptığınızda bu koşulları kabul etmiş sayılırsınız:</p>
-<ul>
-  <li>FindCord botunu bir Discord sunucusuna eklemek,</li>
-  <li>FindCord botunun komutlarını kullanmak,</li>
-  <li>findcord.com web sitesini kullanmak,</li>
-  <li>FindCord API&rsquo;sine erişmek.</li>
-</ul>
-<p>Bu koşulları kabul etmiyorsanız botu sunucunuzdan kaldırmanız ve hizmeti kullanmamanız gerekir.</p>
+    <div class="notice">
+        <p>
+            <strong>Önemli:</strong> Bu bot, Discord'un kendi hizmeti değildir.
+            Üçüncü taraf bir uygulamadır ve Discord'un geçerli Kullanım Koşulları,
+            Geliştirici Koşulları, Geliştirici Politikası ve diğer uygulanabilir
+            kurallarıyla uyumlu şekilde işletilmelidir.
+        </p>
+    </div>
 
-<h2 id="t2">2. Hizmetin tanımı</h2>
-<p>FindCord iki parçadan oluşur:</p>
-<ul>
-  <li><strong>Sunucu yönetim botu</strong> — üye kaydı (onboarding), otomatik moderasyon (raid koruması,
-      hesap yaşı kapısı, ceza kaçağı engelleme, takma ad politikası, özel durum denetimi), durum rolü,
-      yetkili nöbeti ve davet takibi. Botun tüm komutları eğik çizgi (<code>/</code>) komutudur.</li>
-  <li><strong>Sorgulama hizmeti</strong> — findcord.com ve FindCord API üzerinden, Discord&rsquo;da herkese
-      açık görünen profil ve istatistik bilgilerinin görüntülenmesi.</li>
-</ul>
-<div class="box box-ok">
-  <strong>Opt-in ilkesi.</strong> Bot bir sunucuya eklendiğinde yönetim özelliklerinin tamamı
-  <strong>kapalıdır</strong>. Her özellik <code>/koruma</code> panelinden sunucu yöneticisi tarafından
-  ayrı ayrı açılır.
-</div>
+    <h2>1. Toplanan ve İşlenen Veriler</h2>
 
-<h2 id="t3">3. Uygunluk ve yaş</h2>
-<ul>
-  <li>Hizmeti kullanmak için Discord&rsquo;un hizmet şartlarına uygun yaşta olmanız gerekir
-      (asgari <strong>13</strong> yaş; bulunduğunuz ülkede daha yüksek bir sınır varsa o geçerlidir).</li>
-  <li>Botu bir sunucuya ekleyebilmek için o sunucuda <strong>Sunucuyu Yönet</strong> yetkisine sahip
-      olmanız gerekir.</li>
-  <li>Hizmeti kullanırken Discord&rsquo;un <em>Terms of Service</em> ve <em>Community Guidelines</em>
-      kurallarına uymak zorunludur.</li>
-</ul>
+    <p>
+        Bot, yalnızca sunucu yönetimi ve kullanıcının veya sunucu yöneticisinin
+        etkinleştirdiği özelliklerin çalışması için gerekli verileri işler.
+        İşlenen veri türleri, botun ilgili sunucuda etkin olan özelliklerine göre
+        değişebilir.
+    </p>
 
-<h2 id="t4">4. Botun izinleri</h2>
-<p>Bot, davet sırasında istenen Discord izinlerini yalnızca açıkladığı işlevler için kullanır:</p>
-<table>
-  <thead><tr><th>İzin</th><th>Ne için gerekli</th></tr></thead>
-  <tbody>
-    <tr><td>Rolleri Yönet</td><td>Kayıt rolleri, kayıtsız rolü, ceza rolü ve durum rolünün verilip alınması</td></tr>
-    <tr><td>Takma Adları Yönet</td><td>Kayıt sırasında takma ad atama ve takma ad politikasının uygulanması</td></tr>
-    <tr><td>Üyeleri Zaman Aşımına Al</td><td>Hesap yaşı kapısı ve özel durum denetiminde zaman aşımı işlemi</td></tr>
-    <tr><td>Üyeleri At</td><td>Yalnızca yönetici &ldquo;at&rdquo; işlemini seçtiyse hesap yaşı kapısında</td></tr>
-    <tr><td>Sunucuyu Yönet</td><td>Raid korumasında doğrulama seviyesinin geçici yükseltilmesi ve davet takibi</td></tr>
-    <tr><td>Denetim Kaydını Görüntüle</td><td>Ceza kayıtlarında işlemi yapan yetkilinin ve sebebin okunması</td></tr>
-    <tr><td>Mesaj Gönder / Bağlantı Ekle / Geçmişi Oku</td><td>Komut yanıtlarının ve log kartlarının gönderilmesi</td></tr>
-  </tbody>
-</table>
-<div class="box box-no">
-  <strong>Kullanılmayan izin:</strong> Bot, Discord&rsquo;un <em>Message Content</em> (mesaj içeriği) iznini
-  <strong>kullanmaz</strong> ve sunucudaki mesaj metinlerini okumaz. Tüm komutlar eğik çizgi komutu olarak
-  çalışır.
-</div>
+    <h3>1.1. Discord hesap ve sunucu bilgileri</h3>
+    <ul>
+        <li>Discord kullanıcı kimliği (User ID).</li>
+        <li>Discord sunucu kimliği (Guild ID).</li>
+        <li>Botun çalışması için gerekli olduğunda kullanıcı adı, takma ad ve profil bilgileri.</li>
+        <li>Sunucu üyeliği, rol ve kanal bilgileri.</li>
+        <li>Bot komutlarıyla ilişkili işlem ve yapılandırma bilgileri.</li>
+    </ul>
 
-<h2 id="t5">5. Sunucu yöneticisinin sorumluluğu</h2>
-<p>Hangi özelliğin açılacağına, hangi rollerin ve kanalların seçileceğine, hangi kelimelerin yasaklanacağına
-ve hangi işlemin (kayıt, rol alma, zaman aşımı, atma) uygulanacağına <strong>sunucu yöneticisi</strong>
-karar verir. Buna bağlı olarak:</p>
-<ul>
-  <li>Yapılandırmanın sonuçlarından ve sunucu üyelerine uygulanan işlemlerden sunucu yöneticisi sorumludur.</li>
-  <li>Yönetici, sunucusunda hangi verilerin üretildiğini ve bunun üyelerine bildirilmesini kendi
-      sorumluluğunda yönetir.</li>
-  <li>Yanlış yapılandırma sonucu oluşan rol/erişim kayıplarından FindCord sorumlu tutulamaz. Raid
-      korumasının uyguladığı kilit <strong>geri alınabilir</strong> niteliktedir; bot kendi başına
-      üye atmaz veya yasaklamaz (yönetici bu işlemi açıkça seçmedikçe).</li>
-</ul>
+    <h3>1.2. Sunucu yönetimi ve moderasyon kayıtları</h3>
+    <p>
+        İlgili özellikler etkinleştirilmişse aşağıdaki veriler işlenebilir:
+    </p>
+    <ul>
+        <li>Uyarı, susturma, uzaklaştırma, yasaklama ve benzeri moderasyon kayıtları.</li>
+        <li>İşlemi gerçekleştiren yetkilinin ve işlem uygulanan üyenin Discord kimlikleri.</li>
+        <li>İşlem türü, tarihi, gerekçesi ve ilgili sunucu bilgileri.</li>
+        <li>Sunucu güvenliği, otomatik moderasyon ve koruma ayarları.</li>
+        <li>Botun yönetim işlevleri için gerekli olay ve hata kayıtları.</li>
+    </ul>
 
-<h2 id="t6">6. Kabul edilebilir kullanım</h2>
-<p>Aşağıdakiler <strong>yasaktır</strong>:</p>
-<ul>
-  <li>Hizmeti taciz, tehdit, hedef gösterme veya kişilerin rızası olmadan takip amacıyla kullanmak.</li>
-  <li>Sorgu sonuçlarını kişileri fişlemek, şantaj yapmak veya kişisel verileri dağıtmak (doxxing) için
-      kullanmak.</li>
-  <li>Hizmeti otomatik araçlarla kitlesel olarak taramak, verileri toplu kopyalamak (scraping) veya
-      kendi veritabanınızı oluşturmak.</li>
-  <li>Hizmetin verilerini izinsiz olarak yeniden satmak, kiralamak veya başka bir hizmete aktarmak.</li>
-  <li>Hız sınırlarını aşmaya çalışmak, birden fazla hesap/anahtar ile sınırları aşmak, hizmete aşırı yük
-      bindirmek veya kesintiye uğratmak.</li>
-  <li>API anahtarını paylaşmak, satmak veya herkese açık bir istemcide (web sayfası, uygulama kaynak kodu)
-      yayımlamak.</li>
-  <li>Hizmeti Discord&rsquo;un kurallarına, kullanıcı hesabı otomasyonuna (selfbot) veya yürürlükteki
-      mevzuata aykırı biçimde kullanmak.</li>
-</ul>
+    <h3>1.3. İstatistik ve etkinlik verileri</h3>
+    <p>
+        İstatistik özellikleri etkinleştirildiyse mesaj sayısı, ses kanalı
+        etkinlikleri, katılım bilgileri ve benzeri sunucu istatistikleri
+        işlenebilir. Ses etkinliği takibi, sesli görüşmelerin kaydedildiği
+        anlamına gelmez.
+    </p>
 
-<h2 id="t7">7. API kullanım koşulları</h2>
-<ul>
-  <li>API erişimi <strong>kişiye özel bir anahtar</strong> ile verilir ve anahtarın güvenliği sahibinin
-      sorumluluğundadır. Anahtarınızla yapılan tüm istekler size aittir.</li>
-  <li>API <strong>hız sınırlarına</strong> tabidir. Sınırların aşılması durumunda istekler geçici olarak
-      reddedilir; sürekli ihlalde anahtar iptal edilebilir.</li>
-  <li>API yalnızca <strong>herkese açık</strong> profil ve istatistik verisi döndürür. Gizlilik ayarını
-      açan kullanıcıların verileri döndürülmez.</li>
-  <li>API ile elde edilen veriler kalıcı olarak kopyalanıp bağımsız bir hizmet olarak sunulamaz.</li>
-  <li>API&rsquo;yi kullanan uygulamalar, kendi kullanıcılarına karşı kendi gizlilik politikalarından
-      sorumludur.</li>
-</ul>
+    <h3>1.4. Mesaj içeriği ve komut verileri</h3>
+    <p>
+        Bot, komutların ve etkinleştirilmiş moderasyon özelliklerinin gerektirdiği
+        ölçüde Discord üzerinden erişebildiği verileri işleyebilir. Mesaj içeriğine
+        erişim, Discord'un sağladığı erişim kapsamlarına ve gerekli ayrıcalıklı
+        Gateway Intent izinlerine tabidir.
+    </p>
+    <p>
+        Mesaj içeriğine erişim gerektirmeyen özellikler için bu tür veriler
+        gereksiz yere toplanmamalı veya saklanmamalıdır. Bot, Discord'un erişim
+        kontrollerini aşmak amacıyla çalıştırılmaz.
+    </p>
 
-<h2 id="t8">8. Hizmetin sürekliliği</h2>
-<ul>
-  <li>Hizmet &ldquo;olduğu gibi&rdquo; sunulur. Kesintisiz veya hatasız çalışacağı garanti edilmez.</li>
-  <li>Bakım, güncelleme veya teknik arıza nedeniyle hizmete geçici olarak erişilemeyebilir. Planlı bakımlar
-      bot üzerinden ve destek sunucusunda duyurulur.</li>
-  <li>Özellikler zaman içinde eklenebilir, değiştirilebilir veya kaldırılabilir. Kullanıcı deneyimini
-      doğrudan etkileyen değişiklikler duyurulur.</li>
-  <li>Discord&rsquo;un API&rsquo;sinde veya politikalarında yapılan değişiklikler bazı özelliklerin
-      kısıtlanmasına veya kaldırılmasına yol açabilir.</li>
-</ul>
+    <h2>2. Verilerin Kullanım Amaçları</h2>
 
-<h2 id="t9">9. Sorumluluğun sınırı</h2>
-<p>Yürürlükteki mevzuatın izin verdiği ölçüde FindCord; hizmetin kullanımından veya kullanılamamasından
-doğan dolaylı zararlardan, veri kaybından, kâr kaybından veya sunucu yönetiminin yapılandırma
-tercihlerinden kaynaklanan sonuçlardan sorumlu tutulamaz. Hizmet, hukuki danışmanlık veya resmî bir
-kimlik doğrulama aracı değildir; sunulan bilgiler Discord&rsquo;un sağladığı herkese açık verilere
-dayanır ve hata içerebilir.</p>
+    <p>İşlenen veriler aşağıdaki amaçlarla sınırlı olarak kullanılabilir:</p>
+    <ul>
+        <li>Sunucu yönetimi ve moderasyon komutlarını çalıştırmak.</li>
+        <li>Sunucu güvenliği ve etkinleştirilen koruma özelliklerini sağlamak.</li>
+        <li>Yetkili işlemlerinin ve moderasyon kayıtlarının tutulmasını sağlamak.</li>
+        <li>İsteğe bağlı istatistik ve sunucu etkinliği özelliklerini sunmak.</li>
+        <li>Bot ayarlarını ve sunucuya özel yapılandırmaları hatırlamak.</li>
+        <li>Hataları tespit etmek, kötüye kullanımı önlemek ve hizmet güvenliğini korumak.</li>
+        <li>Veri erişimi veya silme taleplerini değerlendirmek ve yerine getirmek.</li>
+    </ul>
 
-<h2 id="t10">10. Erişimin askıya alınması</h2>
-<p>Aşağıdaki durumlarda bir kullanıcının, sunucunun veya API anahtarının erişimi önceden bildirim
-yapılmaksızın askıya alınabilir veya kalıcı olarak kapatılabilir:</p>
-<ul>
-  <li>Bölüm 6&rsquo;daki kabul edilebilir kullanım kurallarının ihlali,</li>
-  <li>Discord&rsquo;un hizmet şartlarının ihlali,</li>
-  <li>hizmete kasıtlı aşırı yük bindirme veya güvenlik açığı sömürme girişimi,</li>
-  <li>sorgu verilerinin taciz/doxxing amacıyla kullanıldığına dair makul bulgu.</li>
-</ul>
-<p>İtirazınızı destek sunucusu üzerinden iletebilirsiniz.</p>
+    <p>
+        Discord üzerinden elde edilen veriler; reklam, kullanıcı profili oluşturma,
+        veri satışı, kullanıcıları başka amaçlarla değerlendirme veya botun
+        açıklanan işlevleriyle ilgisiz amaçlar için kullanılmaz.
+    </p>
 
-<h2 id="t11">11. Veri ve gizlilik</h2>
-<p>Hangi verilerin toplandığı, hangi amaçla kullanıldığı, ne kadar süre saklandığı ve bu veriler
-üzerindeki haklarınız <a href="privacy.html">Gizlilik Politikası</a>&rsquo;nda açıklanmıştır. Gizlilik
-Politikası bu koşulların ayrılmaz bir parçasıdır.</p>
-<p>Özetle: mesaj içerikleri okunmaz ve saklanmaz; yönetim özellikleri varsayılan olarak kapalıdır;
-belirli kayıtlar 30&ndash;180 gün sonra otomatik silinir; profilinizi gizleyebilir veya verilerinizin
-tamamen silinmesini talep edebilirsiniz.</p>
+    <h2>3. Verilerin Saklanması ve Güvenliği</h2>
 
-<h2 id="t12">12. Fikri mülkiyet</h2>
-<p>FindCord adı, logosu, web sitesi tasarımı ve bot kaynak kodu FindCord ekibine aittir. Hizmetin
-arayüzünü veya kodunu izinsiz kopyalayıp kendi hizmetiniz olarak sunamazsınız. Discord adı, logosu ve
-ilgili markalar Discord Inc.&rsquo;e aittir.</p>
+    <p>
+        Veriler, ilgili bot özelliğinin çalışması için gerekli olduğu süre boyunca
+        ve geçerli hukuki yükümlülükler dikkate alınarak saklanır. Gereksiz hale
+        gelen veriler silinir veya uygun olduğu durumlarda kimlikle ilişkilendirilemeyecek
+        şekilde anonimleştirilir.
+    </p>
 
-<h2 id="t13">13. Discord ile ilişki</h2>
-<p>FindCord <strong>bağımsız bir projedir</strong>; Discord Inc. tarafından geliştirilmemiş, desteklenmemiş
-veya onaylanmamıştır. Hizmet Discord&rsquo;un genel API&rsquo;si üzerinden çalışır ve Discord&rsquo;un
-geliştirici politikalarına uymayı taahhüt eder.</p>
+    <p>
+        Verilerin saklanma süresi; verinin türüne, kullanım amacına, ilgili sunucu
+        ayarlarına ve uygulanabilir yasal gerekliliklere göre değişebilir.
+        Moderasyon kayıtları veya güvenlik kayıtları için belirli saklama süreleri
+        uygulanıyorsa bu süreler botun gerçek yapılandırmasıyla uyumlu olmalıdır.
+    </p>
 
-<h2 id="t14">14. Koşullardaki değişiklikler</h2>
-<p>Bu koşullar zaman zaman güncellenebilir. Önemli değişiklikler destek sunucumuzda duyurulur ve sayfanın
-üstündeki <em>Son güncelleme</em> tarihi yenilenir. Değişiklikten sonra hizmeti kullanmaya devam etmek,
-güncellenmiş koşulları kabul ettiğiniz anlamına gelir.</p>
+    <p>
+        Verilerin yetkisiz erişime, kayba, değiştirilmesine veya açıklanmasına
+        karşı korunması için uygun teknik ve idari önlemler alınır. Bununla
+        birlikte, hiçbir elektronik depolama veya aktarım yöntemi mutlak güvenlik
+        garantisi vermez.
+    </p>
 
-<h2 id="t15">15. İletişim</h2>
-<ul>
-  <li><strong>Destek sunucusu:</strong> <a href="https://discord.gg/findcord">discord.gg/findcord</a></li>
-  <li><strong>Web sitesi:</strong> <a href="https://findcord.com">findcord.com</a></li>
-  <li><strong>Yanıt süresi:</strong> genellikle 1&ndash;2 iş günü</li>
-</ul>
+    <h2>4. Verilerin Paylaşılması</h2>
+
+    <p>
+        Kullanıcı verileri satılmaz, kiralanmaz ve reklam amacıyla üçüncü taraflara
+        aktarılmaz.
+    </p>
+
+    <p>
+        Veriler yalnızca aşağıdaki durumlarda paylaşılabilir veya aktarılabilir:
+    </p>
+    <ul>
+        <li>
+            Botun çalışması için gerekli olan ve uygun güvenlik önlemlerini
+            uygulayan barındırma, veritabanı veya teknik hizmet sağlayıcılarıyla.
+        </li>
+        <li>
+            Geçerli bir hukuki yükümlülüğün yerine getirilmesi gerektiğinde,
+            yürürlükteki mevzuatın izin verdiği veya gerektirdiği ölçüde.
+        </li>
+        <li>
+            Kullanıcının açık ve bilgilendirilmiş talimatıyla, ilgili kurallara
+            ve mevzuata uygun olarak.
+        </li>
+    </ul>
+
+    <p>
+        Hizmet sağlayıcıları kullanılıyorsa, bunların verileri hangi amaçlarla
+        işlediği ve hangi güvenlik önlemlerini uyguladığı değerlendirilmelidir.
+        Discord API verileri, Discord'un politikalarının izin vermediği üçüncü
+        taraflarla paylaşılmaz.
+    </p>
+
+    <h2>5. Veri Silme ve Kullanıcı Talepleri</h2>
+
+    <p>
+        Kullanıcılar, bot tarafından kendileriyle ilişkilendirilebilen veriler
+        hakkında bilgi veya uygun olduğu durumlarda düzeltme ya da silme talebinde
+        bulunabilir. Talepler, destek Discord sunucusu üzerinden iletilebilir:
+    </p>
+
+    <p>
+        <a href="https://discord.gg/findcord" target="_blank" rel="noopener noreferrer">
+            Discord Destek Sunucusu
+        </a>
+    </p>
+
+    <p>
+        Talebin işleme alınabilmesi için ilgili kullanıcı veya sunucu ile bağlantının
+        makul ölçüde doğrulanması istenebilir. Talepler geçerli mevzuat ve Discord
+        politikaları çerçevesinde değerlendirilir.
+    </p>
+
+    <p>
+        Bir verinin saklanması için geçerli bir hukuki yükümlülük veya başka bir
+        yasal gerekçe bulunmadığı sürece, botun belirtilen işlevleri için artık
+        gerekli olmayan veriler gecikmeksizin silinir. Botun hizmeti sona ererse
+        veya Discord tarafından veri silinmesi istenirse, ilgili veriler geçerli
+        gerekliliklere uygun şekilde silinir.
+    </p>
+
+    <p>
+        Botun bir Discord sunucusundan kaldırılması, sunucu yapılandırmalarının
+        veya kayıtlarının otomatik olarak silinip silinmediği bakımından tek başına
+        yeterli bir gösterge değildir. Bu nedenle, botun gerçek silme süreci
+        kullanıcıya açıkça bildirilmelidir.
+    </p>
+
+    <h2>6. İzinler ve Discord Kuralları</h2>
+
+    <p>
+        Bot, sunucu yöneticisinin verdiği izinler ve Discord tarafından sağlanan
+        erişim kapsamları doğrultusunda çalışır. Sunucu yöneticileri, botu
+        eklemeden önce istenen izinleri incelemeli ve yalnızca gerekli izinleri
+        vermelidir.
+    </p>
+
+    <p>Botun işletilmesinde aşağıdaki ilkelere uyulur:</p>
+    <ul>
+        <li>Discord kullanıcılarından parola, oturum belirteci veya giriş bilgileri istenmez.</li>
+        <li>Discord'un izin ve gizlilik mekanizmaları aşılmaya çalışılmaz.</li>
+        <li>Veriler yalnızca açıklanan işlevlerin gerektirdiği ölçüde işlenir.</li>
+        <li>Bot, Discord kullanıcı verilerini satmak veya lisanslamak için kullanılmaz.</li>
+        <li>Discord tarafından belirlenen erişim, güvenlik ve geliştirici politikalarına uyulur.</li>
+        <li>
+            Discord'un talep ettiği veri erişimi incelemeleri, onaylar veya
+            ek gereklilikler varsa bunlara uyulur.
+        </li>
+    </ul>
+
+    <p>
+        Discord'un resmi politikalarına aşağıdaki bağlantılardan ulaşılabilir:
+    </p>
+
+    <ul>
+        <li>
+            <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer">
+                Discord Kullanım Koşulları
+            </a>
+        </li>
+        <li>
+            <a href="https://discord.com/developers/docs/policies-and-agreements/developer-policy"
+               target="_blank" rel="noopener noreferrer">
+                Discord Geliştirici Politikası
+            </a>
+        </li>
+        <li>
+            <a href="https://discord.com/developers/docs/policies-and-agreements/developer-terms-of-service"
+               target="_blank" rel="noopener noreferrer">
+                Discord Geliştirici Hizmet Koşulları
+            </a>
+        </li>
+    </ul>
+
+    <h2>7. Çocukların Gizliliği</h2>
+
+    <p>
+        Bot, Discord'un asgari yaş şartlarını ve uygulanabilir dijital rıza yaşı
+        kurallarını ihlal edecek şekilde kullanılmamalıdır. Botun işletilmesi
+        sırasında yaşa ilişkin yasal yükümlülükler dikkate alınır.
+    </p>
+
+    <h2>8. Uluslararası Veri Aktarımları</h2>
+
+    <p>
+        Botun barındırıldığı sunucuların veya kullanılan teknik hizmet
+        sağlayıcılarının konumuna bağlı olarak veriler farklı ülkelerde işlenebilir.
+        Böyle bir aktarım gerçekleşiyorsa, uygulanabilir veri koruma mevzuatının
+        gerektirdiği güvence ve koşullar sağlanmalıdır.
+    </p>
+
+    <h2>9. Gizlilik Politikasındaki Değişiklikler</h2>
+
+    <p>
+        Bu politika, botun özelliklerinde, veri işleme süreçlerinde, Discord
+        politikalarında veya uygulanabilir mevzuatta meydana gelen değişiklikler
+        nedeniyle güncellenebilir. Güncel metinde son güncelleme tarihi belirtilir.
+        Önemli değişiklikler, uygun bir iletişim kanalı aracılığıyla duyurulur.
+    </p>
+
+    <h2>10. İletişim</h2>
+
+    <p>
+        Gizlilik, veri erişimi, düzeltme veya silme talepleri için destek
+        sunucusunu kullanabilirsiniz:
+    </p>
+
+    <p>
+        <a href="https://discord.gg/findcord" target="_blank" rel="noopener noreferrer">
+            https://discord.gg/findcord
+        </a>
+    </p>
+
+    <div class="language">
+
+        <h1>Privacy Policy</h1>
+
+        <div class="meta">
+            <p><strong>Application:</strong> Discord Server Management Bot</p>
+            <p><strong>Effective date:</strong> [DD.MM.YYYY]</p>
+            <p><strong>Last updated:</strong> [DD.MM.YYYY]</p>
+            <p><strong>Contact:</strong>
+                <a href="https://discord.gg/findcord" target="_blank" rel="noopener noreferrer">
+                    Support Discord Server
+                </a>
+            </p>
+        </div>
+
+        <p>
+            This Privacy Policy explains how the Discord server management bot
+            processes information, the purposes for which information may be used,
+            how long it may be retained, and how users can submit data-related
+            requests.
+        </p>
+
+        <p>
+            The bot provides server management, moderation, and security features.
+            The information it processes depends on the features enabled in each
+            server, the permissions granted, and the access scopes made available
+            by Discord.
+        </p>
+
+        <div class="notice">
+            <p>
+                <strong>Important:</strong> This bot is a third-party application
+                and is not operated by Discord. It must be operated in accordance
+                with Discord's applicable Terms of Service, Developer Terms,
+                Developer Policy, and other applicable rules.
+            </p>
+        </div>
+
+        <h2>1. Information We Collect and Process</h2>
+
+        <p>
+            The bot processes only information necessary to provide its server
+            management features and functions enabled by users or server
+            administrators. The types of information processed may vary depending
+            on the features enabled.
+        </p>
+
+        <h3>1.1. Discord Account and Server Information</h3>
+        <ul>
+            <li>Discord user IDs.</li>
+            <li>Discord server IDs.</li>
+            <li>Usernames, nicknames, and profile information when required.</li>
+            <li>Server membership, role, and channel information.</li>
+            <li>Command-related records and configuration information.</li>
+        </ul>
+
+        <h3>1.2. Server Management and Moderation Records</h3>
+        <p>Where the relevant features are enabled, the bot may process:</p>
+        <ul>
+            <li>Warnings, timeouts, kicks, bans, and similar moderation records.</li>
+            <li>The Discord IDs of moderators and affected members.</li>
+            <li>Action types, dates, reasons, and related server information.</li>
+            <li>Server security, automated moderation, and protection settings.</li>
+            <li>Operational and error logs required to maintain the bot.</li>
+        </ul>
+
+        <h3>1.3. Statistics and Activity Information</h3>
+        <p>
+            If statistics features are enabled, the bot may process message counts,
+            voice-channel activity, membership events, and similar server
+            statistics. Voice activity tracking does not mean that voice
+            conversations are recorded.
+        </p>
+
+        <h3>1.4. Message Content and Command Data</h3>
+        <p>
+            The bot may process information accessible through Discord to the
+            extent required by commands and enabled moderation features. Access to
+            message content is subject to Discord's access scopes and any required
+            privileged Gateway Intents.
+        </p>
+
+        <p>
+            Information that is unnecessary for a feature must not be collected or
+            retained without a valid need. The bot must not be used to circumvent
+            Discord's access controls.
+        </p>
+
+        <h2>2. How We Use Information</h2>
+
+        <p>Information may be processed only for purposes such as:</p>
+        <ul>
+            <li>Operating server management and moderation commands.</li>
+            <li>Providing enabled server security and protection features.</li>
+            <li>Maintaining moderation and administrator action records.</li>
+            <li>Providing optional statistics and server activity features.</li>
+            <li>Remembering bot settings and server-specific configurations.</li>
+            <li>Detecting errors, preventing abuse, and maintaining service security.</li>
+            <li>Handling data access, correction, and deletion requests.</li>
+        </ul>
+
+        <p>
+            Discord API Data is not used for advertising, profiling users,
+            selling data, making unrelated assessments about users, or purposes
+            unrelated to the bot's stated functionality.
+        </p>
+
+        <h2>3. Data Retention and Security</h2>
+
+        <p>
+            Information is retained only for as long as necessary for the relevant
+            feature and subject to applicable legal obligations. Information that
+            is no longer needed is deleted or, where appropriate, anonymized so
+            that it can no longer be associated with an individual.
+        </p>
+
+        <p>
+            Retention periods may vary according to the type of information, its
+            purpose, server settings, and applicable legal requirements. Any
+            specific retention periods for moderation or security records must
+            accurately reflect the bot's actual configuration.
+        </p>
+
+        <p>
+            Appropriate technical and organizational measures are used to protect
+            information against unauthorized access, loss, alteration, or
+            disclosure. However, no electronic storage or transmission method can
+            guarantee absolute security.
+        </p>
+
+        <h2>4. Sharing of Information</h2>
+
+        <p>
+            User information is not sold, rented, or shared with third parties for
+            advertising purposes.
+        </p>
+
+        <p>Information may be disclosed or transferred only when:</p>
+        <ul>
+            <li>
+                Necessary service providers, such as hosting, database, or
+                technical providers, process information to operate the bot under
+                appropriate safeguards.
+            </li>
+            <li>
+                Disclosure is required or permitted by applicable law.
+            </li>
+            <li>
+                A user expressly and knowingly instructs the bot operator to share
+                the relevant information, subject to applicable rules and law.
+            </li>
+        </ul>
+
+        <p>
+            Where service providers are used, their processing purposes and
+            security measures should be assessed. Discord API Data must not be
+            shared with third parties in ways prohibited by Discord's policies.
+        </p>
+
+        <h2>5. Data Access and Deletion Requests</h2>
+
+        <p>
+            Users may request information about data associated with them and, where
+            applicable, request correction or deletion. Requests may be submitted
+            through the support Discord server:
+        </p>
+
+        <p>
+            <a href="https://discord.gg/findcord" target="_blank" rel="noopener noreferrer">
+                Support Discord Server
+            </a>
+        </p>
+
+        <p>
+            Reasonable verification of the user's identity or relationship to the
+            relevant server may be requested. Requests will be handled in
+            accordance with applicable law and Discord policies.
+        </p>
+
+        <p>
+            Unless a valid legal obligation or other lawful basis requires
+            retention, information that is no longer necessary for the bot's
+            stated functionality will be deleted promptly. If the bot stops
+            operating or Discord requests deletion, relevant information will be
+            deleted as required by applicable rules.
+        </p>
+
+        <p>
+            Removing the bot from a Discord server does not, by itself, explain
+            whether stored configurations or records are automatically deleted.
+            The actual deletion process must therefore be accurately disclosed
+            to users.
+        </p>
+
+        <h2>6. Permissions and Discord Policies</h2>
+
+        <p>
+            The bot operates within the permissions granted by server
+            administrators and the access scopes provided by Discord.
+            Administrators should review requested permissions and grant only
+            those necessary for the bot's features.
+        </p>
+
+        <p>The bot must be operated in accordance with the following principles:</p>
+        <ul>
+            <li>Discord passwords, session tokens, or login credentials are never requested.</li>
+            <li>Discord privacy, permission, and security controls are not circumvented.</li>
+            <li>Information is processed only to the extent necessary for stated features.</li>
+            <li>Discord user data is not sold or licensed.</li>
+            <li>Applicable Discord access, security, and developer policies are followed.</li>
+            <li>Any required Discord data-access reviews or approvals are respected.</li>
+        </ul>
+
+        <p>Official Discord policies:</p>
+        <ul>
+            <li>
+                <a href="https://discord.com/terms" target="_blank" rel="noopener noreferrer">
+                    Discord Terms of Service
+                </a>
+            </li>
+            <li>
+                <a href="https://discord.com/developers/docs/policies-and-agreements/developer-policy"
+                   target="_blank" rel="noopener noreferrer">
+                    Discord Developer Policy
+                </a>
+            </li>
+            <li>
+                <a href="https://discord.com/developers/docs/policies-and-agreements/developer-terms-of-service"
+                   target="_blank" rel="noopener noreferrer">
+                    Discord Developer Terms of Service
+                </a>
+            </li>
+        </ul>
+
+        <h2>7. Children's Privacy</h2>
+
+        <p>
+            The bot must not be used in a way that violates Discord's minimum-age
+            requirements or applicable digital-consent-age laws. Relevant legal
+            obligations concerning age must be considered when operating the bot.
+        </p>
+
+        <h2>8. International Data Transfers</h2>
+
+        <p>
+            Depending on the location of hosting infrastructure and technical
+            service providers, information may be processed in different
+            countries. Where such transfers occur, the safeguards required by
+            applicable data protection law must be implemented.
+        </p>
+
+        <h2>9. Changes to This Policy</h2>
+
+        <p>
+            This policy may be updated when bot features, data processing
+            practices, Discord policies, or applicable laws change. The effective
+            and last-updated dates will be maintained. Significant changes will
+            be communicated through an appropriate channel.
+        </p>
+
+        <h2>10. Contact</h2>
+
+        <p>
+            For privacy, data access, correction, or deletion requests, please
+            contact the support Discord server:
+        </p>
+
+        <p>
+            <a href="https://discord.gg/findcord" target="_blank" rel="noopener noreferrer">
+                https://discord.gg/findcord
+            </a>
+        </p>
+
+    </div>
+
+    <footer>
+        <p>
+            This policy concerns the Discord server management bot only.
+            It does not cover any separate website or API.
+        </p>
+    </footer>
 
 </main>
-
-<hr class="split">
-
-<!-- ============================== ENGLISH ============================== -->
-<main class="card" id="en" lang="en">
-
-<h1 style="font-size:24px">FindCord — Terms of Service (English)</h1>
-<p class="meta">Effective date: <strong>4 October 2026</strong> · Last updated: 4 October 2026</p>
-<p class="meta">Scope: the FindCord Discord bot, findcord.com and the FindCord API.
-This English text is a translation of the Turkish version above; both have the same meaning.</p>
-
-<div class="box box-brand">
-  <strong>Summary.</strong> FindCord is a server management and lookup service. By adding the bot to your
-  server or using the website/API you accept these terms. The bot&rsquo;s management features are
-  <strong>disabled by default</strong>; the <strong>server administrator</strong> decides which features to
-  enable and is responsible for the consequences of that configuration. The service is subject to
-  Discord&rsquo;s rules and is not affiliated with Discord.
-</div>
-
-<h2>1. Acceptance</h2>
-<p>You accept these terms when you add the FindCord bot to a Discord server, use its commands, use
-findcord.com, or access the FindCord API. If you do not accept them, remove the bot and stop using the
-service.</p>
-
-<h2>2. What the service is</h2>
-<ul>
-  <li><strong>Server management bot</strong> — member registration (onboarding), automated moderation
-      (anti-raid, account-age gate, punishment-evasion protection, nickname policy, custom-status
-      moderation), status roles, staff availability and invite attribution. All commands are slash commands.</li>
-  <li><strong>Lookup service</strong> — viewing publicly visible Discord profile and statistics information
-      through findcord.com and the FindCord API.</li>
-</ul>
-<div class="box box-ok">
-  <strong>Opt-in by design.</strong> All management features are <strong>off</strong> when the bot joins a
-  server; each one is enabled individually by an administrator through the <code>/koruma</code> panel.
-</div>
-
-<h2>3. Eligibility and age</h2>
-<ul>
-  <li>You must meet Discord&rsquo;s minimum age requirement (at least <strong>13</strong>, or higher where
-      local law requires).</li>
-  <li>Adding the bot to a server requires the <strong>Manage Server</strong> permission in that server.</li>
-  <li>You must comply with Discord&rsquo;s Terms of Service and Community Guidelines.</li>
-</ul>
-
-<h2>4. Bot permissions</h2>
-<p>The bot uses the Discord permissions requested at invite time only for the stated functions:</p>
-<table>
-  <thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead>
-  <tbody>
-    <tr><td>Manage Roles</td><td>Granting and removing registration, unregistered, punishment and status roles</td></tr>
-    <tr><td>Manage Nicknames</td><td>Setting nicknames during registration and enforcing the nickname policy</td></tr>
-    <tr><td>Moderate Members</td><td>Timeouts applied by the account-age gate and custom-status moderation</td></tr>
-    <tr><td>Kick Members</td><td>Only if an administrator selected the &ldquo;kick&rdquo; action in the account-age gate</td></tr>
-    <tr><td>Manage Server</td><td>Temporarily raising the verification level during anti-raid, and invite attribution</td></tr>
-    <tr><td>View Audit Log</td><td>Reading the acting moderator and reason for moderation records</td></tr>
-    <tr><td>Send Messages / Embed Links / Read History</td><td>Sending command responses and log cards</td></tr>
-  </tbody>
-</table>
-<div class="box box-no">
-  <strong>Not used:</strong> the bot does <strong>not</strong> use Discord&rsquo;s <em>Message Content</em>
-  intent and does not read message text in servers. All commands are slash commands.
-</div>
-
-<h2>5. Server administrator responsibility</h2>
-<p>The server administrator decides which features are enabled, which roles and channels are selected,
-which terms are banned and which action is applied. Accordingly:</p>
-<ul>
-  <li>The administrator is responsible for the configuration and for actions applied to their members.</li>
-  <li>FindCord is not liable for role or access loss caused by misconfiguration. The anti-raid lock is
-      <strong>reversible</strong>, and the bot never kicks or bans members on its own unless an
-      administrator explicitly selected that action.</li>
-</ul>
-
-<h2>6. Acceptable use</h2>
-<p>The following are <strong>prohibited</strong>:</p>
-<ul>
-  <li>Using the service to harass, threaten, target or stalk people.</li>
-  <li>Using lookup results for blackmail or to publish personal information (doxxing).</li>
-  <li>Mass-scanning the service with automated tools, bulk-copying data (scraping) or building your own
-      database from it.</li>
-  <li>Reselling, renting or transferring the service&rsquo;s data without permission.</li>
-  <li>Attempting to bypass rate limits, using multiple accounts or keys to exceed limits, or overloading
-      or disrupting the service.</li>
-  <li>Sharing, selling or publishing your API key in a public client.</li>
-  <li>Using the service in breach of Discord&rsquo;s rules (including user-account automation / selfbots)
-      or applicable law.</li>
-</ul>
-
-<h2>7. API terms</h2>
-<ul>
-  <li>API access is granted through a <strong>personal key</strong>; keeping it secure is the holder&rsquo;s
-      responsibility and all requests made with it are attributed to them.</li>
-  <li>The API is subject to <strong>rate limits</strong>. Exceeding them results in temporary rejection;
-      repeated abuse may lead to key revocation.</li>
-  <li>The API returns only <strong>publicly visible</strong> profile and statistics data. Data of users who
-      enabled a privacy setting is not returned.</li>
-  <li>Data obtained through the API may not be permanently copied and offered as an independent service.</li>
-  <li>Applications using the API are responsible for their own privacy policies towards their users.</li>
-</ul>
-
-<h2>8. Availability</h2>
-<ul>
-  <li>The service is provided &ldquo;as is&rdquo;, without a guarantee of uninterrupted or error-free operation.</li>
-  <li>Access may be temporarily unavailable due to maintenance, updates or technical faults. Planned
-      maintenance is announced through the bot and the support server.</li>
-  <li>Features may be added, changed or removed over time; changes that directly affect users are announced.</li>
-  <li>Changes in Discord&rsquo;s API or policies may restrict or remove certain features.</li>
-</ul>
-
-<h2>9. Limitation of liability</h2>
-<p>To the extent permitted by law, FindCord is not liable for indirect damages, data loss, lost profits or
-consequences arising from a server&rsquo;s configuration choices. The service is not legal advice or an
-official identity verification tool; the information shown is based on publicly available Discord data and
-may contain errors.</p>
-
-<h2>10. Suspension of access</h2>
-<p>Access for a user, server or API key may be suspended or terminated without prior notice in case of:
-breach of section 6, breach of Discord&rsquo;s Terms of Service, deliberate overloading or exploitation
-attempts, or reasonable evidence that lookup data is being used for harassment or doxxing. Appeals can be
-submitted through the support server.</p>
-
-<h2>11. Data and privacy</h2>
-<p>What data is collected, why, how long it is retained and your rights over it are described in our
-<a href="privacy.html">Privacy Policy</a>, which forms an integral part of these terms. In short: message
-content is never read or stored; management features are off by default; time-limited records are deleted
-automatically after 30&ndash;180 days; you can hide your profile or request full deletion.</p>
-
-<h2>12. Intellectual property</h2>
-<p>The FindCord name, logo, website design and bot source code belong to the FindCord team and may not be
-copied and offered as your own service. Discord&rsquo;s name, logo and related marks belong to Discord Inc.</p>
-
-<h2>13. Relationship with Discord</h2>
-<p>FindCord is an <strong>independent project</strong>, not developed, endorsed or certified by Discord Inc.
-It operates through Discord&rsquo;s public API and undertakes to comply with Discord&rsquo;s developer
-policies.</p>
-
-<h2>14. Changes to these terms</h2>
-<p>These terms may be updated from time to time. Significant changes are announced in our support server
-and the <em>Last updated</em> date at the top is revised. Continuing to use the service after a change
-means accepting the updated terms.</p>
-
-<h2>15. Contact</h2>
-<ul>
-  <li><strong>Support server:</strong> <a href="https://discord.gg/findcord">discord.gg/findcord</a></li>
-  <li><strong>Website:</strong> <a href="https://findcord.com">findcord.com</a></li>
-  <li><strong>Response time:</strong> usually 1&ndash;2 business days</li>
-</ul>
-
-</main>
-
-<footer>
-  FindCord · <a href="privacy.html">Gizlilik Politikası / Privacy Policy</a> ·
-  <a href="terms.html">Kullanım Koşulları / Terms of Service</a> ·
-  <a href="https://findcord.com">findcord.com</a>
-</footer>
-
-</div>
 </body>
 </html>
